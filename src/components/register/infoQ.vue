@@ -103,7 +103,7 @@ export default {
              this.real_name = e.data.real_name
              this.com_num = e.data.idCard
              this.address_tail = e.data.address_detail
-             this.area_address= e.data.address    
+             this.area_address= e.data.address     
              this.phone = e.data.phone 
              this.com_com_name =e.data.company_name
              this.shop_type_id = e.data.shop_type_id

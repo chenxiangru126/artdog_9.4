@@ -18,8 +18,8 @@
         <div class="main_goods">
             <div class="goods_info">
                 <p class="goods_info_name">{{goodsInfo.goodsName}}</p>
-                <p class="goods_info_price1" v-show="goodsShow" ><span>商品价：</span><span> ¥{{goodsInfo.price}}</span></p>
-                <p class="goods_info_price2" v-show="copyShow" ><span>版权价：</span><span> ¥{{goodsInfo.copyright_price}}</span></p>
+                <p class="goods_info_price1" v-if='goodsInfo.price'  ><span>商品价：</span><span> ¥{{goodsInfo.price}}</span></p>
+                <p class="goods_info_price2" v-if='goodsInfo.copyright_price' ><span>版权价：</span><span> ¥{{goodsInfo.copyright_price}}</span></p>
                 <p class="goods_info_spe"><span>商品标签</span><span>{{tags}}</span></p>
                 <p class="goods_info_spe"><span>创作时间</span><span>{{goodsInfo.creatTime}}</span></p>
                 <p class="goods_info_spe"><span>商品材质</span><span>{{goodsInfo.datum}}</span></p>
@@ -137,9 +137,7 @@
         evaluationNum:'',
         isShare:true,
         copyPrice:null,
-        price:null,
-        copyShow:true,
-        goodsShow:true
+        price:null
         // numzs:0,
         // numxs:0
       }
@@ -178,16 +176,16 @@
                             _this.items.push({url:e.data.goods.urlShow[n],iswht:iswht});
                         };
                     }
-                    if(this.copyPrice == '' || !this.copyShow){
-                        this.copyShow = false;
-                    }else{
-                        this.copyShow = true
-                    }
-                    if(this.price == ''|| !this.price){
-                        this.goodsShow = false
-                    }else{
-                        this.goodsShow = true
-                    }
+                    // if(this.copyPrice == '' || !this.copyShow){
+                    //     this.copyShow = false;
+                    // }else{
+                    //     this.copyShow = true
+                    // }
+                    // if(this.price == ''|| !this.price){
+                    //     this.goodsShow = false
+                    // }else{
+                    //     this.goodsShow = true
+                    // }
                 }
                 
             }).catch()

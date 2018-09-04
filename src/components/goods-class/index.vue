@@ -26,7 +26,7 @@
                             <p style="font-size: .866667rem;font-weight:bold;margin-left: .9rem;">版权价</p>
                             <p style="font-size: .86666rem">￥{{item.copyright_price}}</p>
                         </div>
-                        <div style="margin-left: 2.55rem;color: #FFFFFF ;">
+                        <div v-if='item.price' style="margin-left: 2.55rem;color: #FFFFFF ;">
                             <p style="font-size: .866667rem;font-weight:bold;margin-left: .8rem;">商品价</p>
                             <p style="font-size: .866667rem">￥{{item.price}}</p>
                         </div>

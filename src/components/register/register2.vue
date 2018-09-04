@@ -205,8 +205,8 @@
                                     iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
                                     window.location.href=url;
                                 }else{
-                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=1&model='+model+'&shop_type_id='+shop_type_id)
-                                    window.location.href=url;
+                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=1&model='+this.model+'&shop_type_id='+shop_type_id)
+//                                    window.location.href=url;
                                 }
                             }
                         }).catch()
@@ -216,12 +216,12 @@
                          url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype
                           this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
                             if (e.code == 200) {
-                                if(e.data.isPay == 1){
+                                if(e.data.isPay == 2){
                                     iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
                                     window.location.href=url;
                                 }else{
-                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+model+'&shop_type_id='+shop_type_id)
-                                    window.location.href=url;
+                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+this.model+'&shop_type_id='+shop_type_id)
+//                                    window.location.href=url;
                                 }
                             }
                         }).catch()
@@ -230,12 +230,12 @@
                          url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype
                           this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
                             if (e.code == 200) {
-                                if(e.data.isPay == 1){
+                                if(e.data.isPay == 2){
                                     iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
                                     window.location.href=url;
                                 }else{
                                     iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=1&model='+model+'&shop_type_id='+shop_type_id)
-                                    window.location.href=url;
+//                                    window.location.href=url;
                                 }
                             }
                         }).catch()
@@ -244,7 +244,7 @@
                          url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype
                            this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
                             if (e.code == 200) {
-                                if(e.data.isPay == 1){
+                                if(e.data.isPay == 2){
                                     iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
                                     window.location.href=url;
                                 }else{
