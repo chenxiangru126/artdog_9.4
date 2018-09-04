@@ -50,22 +50,12 @@
           let model = e.data.model; 
           let money = e.data.money;
           let instruction = e.data.instruction;
-          if (data == 1) {
+          if (data == 1 || data == 2 || data == 3) {
             // 是否有店铺，data为1 时是没有店铺
             that.$router.replace('/register')
             return false
-          } else if (data == 2) {
-            // 企业和个人的免单后的操作
-            that.$router.replace('/back_pay?money=' + money+'&state=1&shoptype='+shoptype+'&model='+model)
-          } else if (data == 3 && shoptype == 1) {
-
-            that.$router.replace('/info')
-            return false
-          } else if (data == 3 && shoptype == 2) {
-            that.$router.replace('/infoQ')
-            return false
-  
-          } else if (data == 4) {
+          }
+          else if (data == 4) {
             //    审核中
             that.$router.replace('/shenfen?state=' + data)
             return false
@@ -89,7 +79,20 @@
           }
         })
        }
-    }
+      //else if (data == 2) {
+//            // 企业和个人的免单后的操作
+//            that.$router.replace('/back_pay?money=' + money+'&state=1&shoptype='+shoptype+'&model='+model)
+//          } else if (data == 3 && shoptype == 1) {
+//
+//            that.$router.replace('/info')
+//            return false
+//          } else if (data == 3 && shoptype == 2) {
+//            that.$router.replace('/infoQ')
+//            return false
+//
+//          }
+
+  }
   }
 </script>
 
