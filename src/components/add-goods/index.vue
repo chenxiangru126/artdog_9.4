@@ -11,8 +11,8 @@
                 </mt-swipe-item>
             </mt-swipe>
             <div class="up_r">
-                <div class="up_img"><input type="file" value=""  id="file" accept="image/*"   @change='onUpload'> <img src="../../static/images/bcicon@3x.png" /> <span>上传作品</span></div>
-                <div class="up_img"><img  @click="library" src="../../static/images/bbbicon@3x.png" /> <span>绿库导入</span></div>
+                <div class="up_img"><input type="file" value=""  id="file" accept="image/*"   @change='onUpload'> <img src="../../static/images/bcicon@3x.png" /> <span>上传图片</span></div>
+                <!-- <div class="up_img"><img  @click="library" src="../../static/images/bbbicon@3x.png" /> <span>绿库导入</span></div> -->
             </div>
       
         </div>

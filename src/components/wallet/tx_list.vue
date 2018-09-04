@@ -2,7 +2,7 @@
     <div class="tx_list_b">
         <div class="tx_list-nav">
             <div class="list-nav-b flex-h flex-j-c" @click='nav_open'>
-                <p v-if="billType==47">保证金明细</p>
+                <p v-if="billType=='4'|| billType=='7'">保证金明细</p>
                 <p v-else-if="billType==6">提现明细</p>
                 <p class="t-c flex-v flex-j-c l_t">
                     <span class="span_up" v-if='nav_show'></span>
@@ -63,7 +63,7 @@
     export default {
         data() {
             return {
-                billType: 47, // 47保证金明细 6提现明细
+                billType:'', // 47保证金明细 6提现明细
                 nav_show: false,
                 items: [],
                 loading: false,
@@ -75,10 +75,10 @@
         },
         mounted() {
             var that = this;
-            this.initData();
+            
         },
         created() {
-    
+            this.initData();
         },
         components: {
             noData: no_data
@@ -97,6 +97,10 @@
                     if (that.page == 1) {
                         that.items=[];
                         that.items = e.data.list;
+                        for(let i in e.data.list){
+                            this.billType = e.data.list[i].billType
+                        }
+                        console.log(this.billType)
                     } else {
                         that.items = that.items.concat(e.data.list);
                     }

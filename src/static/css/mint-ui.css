@@ -1311,7 +1311,7 @@ display: inline-block;
     height: 8px;
     display: inline-block;
     border-radius: 100%;
-    background: #000;
+    background: #D8D8D8 !important;
     opacity: 1 !important;
     margin: 0 3px;
 }
