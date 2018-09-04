@@ -99,8 +99,8 @@ export default {
 
         let model   = this.$route.query.model
         let shoptype = this.$route.query.shoptype
-        let shop_type_id = this.$route.query.shop_type_id
-        this.shop_type_id = shop_type_id
+        // let shop_type_id = this.$route.query.shop_type_id
+        // this.shop_type_id = shop_type_id
         this.model = model
         this.shoptype = shoptype
          setTimeout(()=>{
@@ -111,6 +111,7 @@ export default {
                      this.num = e.data.idCard
                      this.text_detail = e.data.address_detail
                      this.area_address= e.data.address
+                     this.shop_type_id = e.data.shop_type_id
                  }
              })
          },1000)
