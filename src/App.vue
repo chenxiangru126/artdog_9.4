@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="box">
-            <!--³ÂÏàÈåÄã¿´µÃµ½Âð£¿¿´²»µ½µÄÊÇÉµ±Æ£¬Éµ±ÆÉµ±Æ£¬Ë®Ë®ÔÚßõßõßõßõßõßõßõßõßõßõßõßõßõßõßõßõßõßõßõßõßõË®Ë®ÊÇ-->
+            <!--App-->
             <router-view name="headers"></router-view>
             <router-view class="view"></router-view>
         </div>
