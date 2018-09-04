@@ -1312,11 +1312,11 @@ display: inline-block;
     display: inline-block;
     border-radius: 100%;
     background: #000;
-    opacity: 0.2;
+    opacity: 1 !important;
     margin: 0 3px;
 }
 .mint-swipe-indicator.is-active {
-    background: #fff;
+    background: #4A8ADA    !important;
 }
 
 
