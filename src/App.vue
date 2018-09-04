@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <div class="box">
-            <!--陈相儒你看得到吗？-->
+            <!--陈相儒你看得到吗？看不到的是傻逼-->
             <router-view name="headers"></router-view>
             <router-view class="view"></router-view>
         </div>
