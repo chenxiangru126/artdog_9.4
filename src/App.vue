@@ -4,6 +4,7 @@
     
             <router-view name="headers"></router-view>
             <router-view class="view"></router-view>
+
         </div>
     </div>
 </template>
