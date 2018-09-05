@@ -205,8 +205,8 @@
                                     iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
                                     window.location.href=url;
                                 }else{
-                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=1&model='+this.model+'&shop_type_id='+shop_type_id)
-//                                    window.location.href=url;
+                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=1&model='+model+'&shop_type_id='+shop_type_id)
+                                    window.location.href=url;
                                 }
                             }
                         }).catch()
@@ -220,8 +220,8 @@
                                     iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
                                     window.location.href=url;
                                 }else{
-                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+this.model+'&shop_type_id='+shop_type_id)
-//                                    window.location.href=url;
+                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+model+'&shop_type_id='+shop_type_id)
+                                    window.location.href=url;
                                 }
                             }
                         }).catch()
