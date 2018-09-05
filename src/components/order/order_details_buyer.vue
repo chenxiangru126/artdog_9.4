@@ -1,6 +1,6 @@
 <template>
     <div class="order_details_b">
-        <div class="fixed_right c6" v-if="state==1 || state==2 && orderDetail.orderType==0 " @click='cancel_order'>取消订单</div>
+        <div class="fixed_right c6" v-if="state==1 && orderDetail.orderType==0 " @click='cancel_order'>取消订单</div>
         <div class="order_details-nav" v-if="state">
             <div class="list-order-details-lib">
                 <div class="flex-h flex-j-c" >
@@ -13,7 +13,7 @@
                     <img src="../../static/images/order-shouhuo.png" alt="" class="order-dog">
                 </div>
                 <div v-if="state!=8 && state!=5 && state!=7 && state!=10 && state!=11">
-                    <div v-show="type==0 ? true:false">
+                    <div v-show="orderDetail.orderType==0 ? true:false">
                     <div class="title-l">收货信息</div>
                     <div class="order-details-lib_b order-p-t-2 copy_event" :data-clipboard-text="seller.express_num" onclick=''>
                         <div class="flex-1 flex-h">
@@ -204,7 +204,19 @@
                     </div> -->
     
                 </div>
-    
+                <!-- <div v-if="state>4">
+                    <div class="w h3 line-h-3 flex-h star-manage flex-a-c">
+                        <p class="font-1 c1 flex-1">商品评价</p>
+                        <p class="star-lib" :class="handle_star_click_num(1)"></p>
+                        <p class="star-lib" :class="handle_star_click_num(2)"></p>
+                        <p class="star-lib" :class="handle_star_click_num(3)"></p>
+                        <p class="star-lib" :class="handle_star_click_num(4)"></p>
+                        <p class="star-lib" :class="handle_star_click_num(5)"></p>
+                    </div>
+                    <div class="order-details-lib_b order-p-t-1" style="min-height:9rem">
+                        <p class="flex-1 flex-h"> {{discussDetail.content}}</p>
+                    </div>
+                </div> -->
     
                 <div class="title-l">备注</div>
                 <div class="order-details-lib_b order-p-t-1">

@@ -30,9 +30,6 @@
            <span>4.网店负责人认证需按系统要求提供本人真实有效的身份信息，包括但不限于：身份信息、有效联系方式、真实地址等</span><br>
            <span>5.开店需缴纳不同等级的保证金</span><br>
            <span>6.如需保证金的级别调整请于平台联系客服电话 010-5962 6817</span>
-           
-
-
       </div>
     </div>
     <!-- 个人网店类型 -->
@@ -57,20 +54,13 @@
                             </div>
                         </td>
                     </tr>
-
-
-
                 </table>
-
-
             </form>
         </div>
-
         <button class="reg1_btn" @click="sure_person">确定</button>
-   </div>
-
-   <!-- 企业网店类型 -->
-     <div class="detail" v-show="shoptype == 2">
+    </div>
+    <!-- 企业网店类型 -->
+    <div class="detail" v-show="shoptype == 2">
         <div class="wrap_two">
             <p>网店类型</p>
             <form class=reg1_lei>
@@ -91,21 +81,12 @@
                             </div>
                         </td>
                     </tr>
-
-
-
                 </table>
-
-
             </form>
         </div>
        <button class="reg1_btn" @click="sure_com">确定</button>
-   </div>
- </div>
-
-
-
-    
+    </div>
+ </div>   
 </template>
 
 <style lang="less">
@@ -140,15 +121,8 @@
                   }) 
                 //填充企业类型
                    this.list_coms = list_com
-                   this.list_person = list_person 
-                 
-              
+                   this.list_person = list_person              
             }).catch()
-
-       
-            
-            
-
         },
        
         data(){

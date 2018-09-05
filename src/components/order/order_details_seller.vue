@@ -12,21 +12,24 @@
                     <img src="../../static/images/order-shouhuo.png" alt="" class="order-dog">
                 </div>
                 <div v-if="state!=2 && state!=8 && state!=5 && state!=7 && state!=10 && state!=11">
-                    <div v-show="orderDetail.orderType == 0 ? true:false">
+                    <div v-show="orderDetail.orderType==0 ? true:false">
                     <div class="title-l">收货信息</div>
-                    <div class="order-details-lib_b order-p-t-2">
+                    <div class="order-details-lib_b order-p-t-2 copy_event" >
                         <div class="flex-1 flex-h">
                             <p class="flex-1">收货地址：</p>
-                            <p class="c4 flex-3">{{buyer.address+' '+buyer.address_detail}}</p>
+                            <p class="c4 flex-3">{{buyer.address}}</p>
                         </div>
                         <div class="flex-1 flex-h">
-                            <p class="flex-1">收件人：</p>
+                            <p class="flex-1">详细地址：</p>
+                            <p class="c4 flex-3">{{buyer.address_detail}}</p>
+                        </div>
+                        <div class="flex-1 flex-h">
+                            <p class="flex-1">收货人：</p>
                             <p class="c4 flex-3">{{buyer.name}}</p>
                         </div>
                         <div class="flex-1 flex-h">
                             <p class="flex-1">联系方式：</p>
                             <p class="c4 flex-3">{{buyer.phone}}</p>
-                        </div>
                         </div>
                         <div v-if="state>2">
                             <div class="flex-1 flex-h">
@@ -37,8 +40,9 @@
                                 <p class="flex-1">物流单号：</p>
                                 <p class="c4 flex-3">{{seller.express_num}}</p>
                             </div>
+                            <div class="copy-icon">复制单号</div>
                         </div>
-                        <!-- <div class="copy-icon">复制单号</div> -->
+                    </div>
                     </div>
                 </div>
                 <div class="order-details-lib_b" style="margin-top:0.8rem" @click="go_goods_details">
@@ -120,7 +124,7 @@
                 <div v-if="state==2||state==5||state==10||state==11">
                     <div v-show=" orderDetail.orderType == 0 ? true:false">
                     <div class="title-l">买家信息</div>
-                    <div class="order-details-lib_b order-p-t-2">
+                    <div class="order-details-lib_b order-p-t-2 copy_event">
                         <div class="flex-1 flex-h">
                             <p class="flex-1">收货地址：</p>
                             <p class="c4 flex-3">{{buyer.address+' '+buyer.address_detail}}</p>
@@ -141,7 +145,7 @@
                             <p class="flex-1">物流单号：</p>
                             <p class="c4 flex-3">{{seller.express_num}}</p>
                         </div>
-                        <!-- <div class="copy-icon">复制单号</div> -->
+                        <div class="copy-icon">复制单号</div>
                     </div>
                     </div>
                 </div>
