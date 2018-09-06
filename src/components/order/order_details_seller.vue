@@ -2,7 +2,7 @@
     <div class="order_details_b">
         <div class="order_details-nav">
             <div class="list-order-details-lib" v-if="state">
-                <div class="flex-h flex-j-c">
+                <div class="flex-h flex-j-c" v-if="state==5">
                     <img src="../../static/images/order-sure.png" alt="" class="order-dog">
                 </div>
                 <div class="flex-h flex-j-c" v-if="state==8">
@@ -65,9 +65,9 @@
                         <div class="flex-1 flex-v flex-j-c flex-a-e" v-if="state==0" @click="sure_get_goods">
                             <div class="lib-btn-2">确认收货</div>
                         </div>
-                        <div class="flex-1 flex-v flex-j-c flex-a-e" v-if="state==5 && orderDetail.orderType==1" @click="see_copy">
-                            <!--<div class="lib-btn-2">查看版权信息</div>-->
-                        </div>
+                        <!-- <div class="flex-1 flex-v flex-j-c flex-a-e" v-if="state==5 && orderDetail.orderType==1" @click="see_copy"> -->
+                            <!-- <div class="lib-btn-2">查看版权信息</div> -->
+                        <!-- </div> -->
                         <div class="flex-1 flex-v flex-j-c flex-a-e" v-if="state==7" @click="go_audit">
                             <div class="lib-btn-2">去审核</div>
                         </div>
@@ -169,18 +169,18 @@
                             <p class="c4 flex-3">{{seller.phone}}</p>
                         </div>
                         <!-- <div class="flex-1 flex-h">
-                                                                                            <p class="flex-1">退单状态：</p>
-                                                                                            <p class="c4 flex-3">待退货</p>
-                                                                                        </div>
-                                                                                        <div class="flex-1 flex-h">
-                                                                                            <p class="flex-1">退单时间：</p>
-                                                                                            <p class="c4 flex-3">商品与描述不符合</p>
-                                                                                        </div> -->
+                            <p class="flex-1">退单状态：</p>
+                            <p class="c4 flex-3">待退货</p>
+                        </div>
+                        <div class="flex-1 flex-h">
+                            <p class="flex-1">退单时间：</p>
+                            <p class="c4 flex-3">商品与描述不符合</p>
+                        </div> -->
                     </div>
                 </div>
-                <!-- <div class="p font-0" v-if='state==3'>
+                <div class="p font-0" v-if='state==3'>
                     【如果买家逾期不确认收货或评价，您可以提供买家已收货证明发送至平台邮箱：ags@auuidc.com，平台审核通过后，该笔订单会默认已完成。】
-                </div> -->
+                </div>
                 <div v-if="state!=7">
                     <div class="title-l">订单信息</div>
                     <div class="order-details-lib_b order-p-t-2 font-1">
@@ -209,21 +209,20 @@
                             <p class="flex-1 flex-h"> 支付方式： <span class="c4 ">{{orderDetail.payWay}}</span></p>
                             <p class="flex-1 flex-h"> 支付时间： <span class="c4 ">{{orderDetail.payTime}}</span></p>
                             <p class="flex-1 flex-h"> 订单金额： <span class="c4 ">¥{{orderDetail.money}}</span></p>
-                            <!-- <p class="flex-1 flex-h"> 平台费用： <span class="c4 ">1.00（已计于订单金额中）</span></p> -->
-                            <!-- <div class="flex-1 flex-v c13" style="padding-left:4.5rem">
+                            <p class="flex-1 flex-h" v-show=" orderDetail.orderType == 0 ? true:false"> 平台费用： <span class="c4 ">1.00（已计于订单金额中）</span></p>
+                            <div class="flex-1 flex-v c13" style="padding-left:4.5rem" v-show=" orderDetail.orderType == 0 ? true:false">
                                 <p>收费规则：</p>
                                 <p>好评5星，收取0% 好评4星，收取1%</p>
                                 <p>好评3星，收取2% 好评2星，收取3%</p>
                                 <p>好评1星，收取4% 好评0星，收取5%</p>
-                            </div> -->
+                            </div>
                         </div>
-                        <!-- <div v-if='state==1'>
+                        <div v-if='state==1' v-show=" orderDetail.orderType == 0 ? true:false">
                             <p class="flex-1 flex-h"> 订单金额： <span class="c4 ">¥{{orderDetail.money}}</span></p>
-                        </div> -->
-    
+                        </div>
                     </div>
                 </div>
-                <!-- <div v-if="state>4">
+                <div v-if="state>4" v-show=" orderDetail.orderType == 0 ? true:false">
                     <div class="w h3 line-h-3 flex-h star-manage flex-a-c">
                         <p class="font-1 c1 flex-1">商品评价</p>
                         <p class="star-lib" :class="handle_star_click_num(1)"></p>
@@ -235,7 +234,7 @@
                     <div class="order-details-lib_b order-p-t-1" style="min-height:9rem">
                         <p class="flex-1 flex-h"> {{discussDetail.content}}</p>
                     </div>
-                </div> -->
+                </div>
                 <div class="title-l">备注</div>
                 <div class="order-details-lib_b order-p-t-1">
                     <p class="flex-1 flex-h"> {{details.remark}}</p>
@@ -378,9 +377,9 @@
                 this.send_goods_show = true;
                 event.stopPropagation();
             },
-            see_copy(){
+            // see_copy(){
 
-            },
+            // },
             //暂不出售，
             no_sell(a){
                 // debugger;
@@ -488,6 +487,7 @@
             //发货信息确定
             send_goods_sure() {
                 var that = this,
+                // debugger
                     url = '/mall/orders/editOrder.do';
                 if (!that.express_name) {
                     that._alert({
@@ -502,16 +502,23 @@
                     return false;
                 }
                 this.util.ajax.get(url, {
+                    
                     params: {
+                        
                         id: that.express_id,
                         express_name: that.express_name,
                         express_num: that.express_num,
                     }
+                
                 }).then(e => {
+                    debugger
                     if (e.code == 200) {
+                        // alert("200")
                         that.send_goods_cancel();
                         that.initData('update');
                     } else if (e.code == 501) {
+                        // debugger
+                        // alert("501")
                         that._alert({
                             content: e.message,
                             yes: function() {

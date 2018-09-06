@@ -160,7 +160,6 @@
                     model,
                     shoptype,
                     shop_type_id
-
                     }
                     this.util.ajax.post('/mall/shop/editShop.do',_p).then(e=>{
                         console.log(e.code)
