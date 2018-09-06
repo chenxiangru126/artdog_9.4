@@ -88,28 +88,23 @@
                 }
             },
             back_event() {
-//               if(this.route_name == 'info'){
-//                   this.util.ajax.post('/mall/shop/getShopDetail.do').then(e => {
-////                        this.realName = e.data.realName;
-//                       this.idCard_zheng = e.data.idCard_zheng;
-////                        this.company_name = e.data.company_name;
-//                       if( this.idCard_zheng==null){
-//                           try {
-//                               iosObject.closeHtml();
-//                           } catch (error) {
-//                               alert(error);
-//                           }
-//                       }else{
-//                           history.back();
-//                       }
-//
-//                   })
-//
-//               }else{
-//                   history.back();
-//               }
-//                 history.back();
-              this.$router.go(-1)
+              if(this.route_name == 'info' || this.route_name == 'infoQ'){
+                this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
+                  if (e.code == 200) {
+                    if(e.data.isPay == 2){
+                      try {
+                        iosObject.closeHtml();
+                      } catch (error) {
+                        alert(error);
+                      }
+                    }else{
+                      this.$router.go(-1)
+                    }
+                  }
+                }).catch()
+              }else{
+                this.$router.go(-1)
+              }
             },
             //返回到类型选择
 //            back_pay(){

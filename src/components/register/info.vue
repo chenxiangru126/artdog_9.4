@@ -85,17 +85,17 @@ export default {
         }
     },
     created() {
+//      setTimeout(()=>{
 //        this.util.ajax.post("/mall/shopauthentication/getPayStatus.do").then(e=>{
-//            if(e.data.isPay != 2){
-//                this.$router.push({path: '/register1?shoptype=1'});
-//            }
+//          if(e.data.isPay != 2){
+//            this.Toast("支付未完成")
+//            this.$router.push({path: '/register1?shoptype=1'});
+//          }
 //        })
+//      },500)
+
     },
     mounted(){
-
-
-
-
 
         let model   = this.$route.query.model
         let shoptype = this.$route.query.shoptype
