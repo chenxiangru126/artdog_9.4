@@ -18,11 +18,12 @@
                         <span style='display:none' :style="typeN?'':'color: #9E9E9E;'"> 购买版权</span>
                     </div>
                     <!--没有商品的时候-->
-                     <div v-else-if='!goodsShow' style="display: flex;margin-bottom: 1.5rem;margin-top: .5rem;justify-content: center;align-items: center;">
-    
-                        <span> 购买版权</span>
+                    <div v-else-if='!goodsShow' style="display: flex;margin-bottom: 1.5rem;margin-top: .5rem;justify-content: center;align-items: center;">
+                        <span style='display:none' :style="typeN?'color: #9E9E9E;':''">购买商品</span>
+                        <input style="height: 0.1rem; line-height: 0.1rem;margin-right: .8rem;" class="switch switch-anim" type="hidden" @click="check">
+                        <span :style="typeN?'':'color: #9E9E9E;'"> 购买版权</span>
                     </div>
-                    <div v-if="!typeN && goodsShow " style="display: flex;justify-content: center;align-items: center;">
+                    <div v-if="!typeN" style="display: flex;justify-content: center;align-items: center;">
                         <span @click="reduction" style="color: #548FD7;"> - </span>
                         <span style="display: inline-block; font-size: 1.2rem;color: #FFFFFF; width:4.333333rem;height: 1.733333rem;text-align: center; background: #424242;border-radius: .733333rem;margin: 0 1.4rem">{{num}}</span>
                         <span @click="addnum" style="color: #548FD7;">+</span>
@@ -55,12 +56,14 @@
              this.copyPriceShow=false
          }else{
              this.copyPriceShow=true
+             this.typeN = true
          }
           if(this.$parent.price == ''|| !this.$parent.price){
              this.goodsShow=false
              
          }else{
              this.goodsShow=true
+             this.typeN=false
          }  
         },
         methods: {

@@ -214,7 +214,7 @@ import {_alert,_confrim,_openimg} from '../../libs/ui';
         },
         //商品新增——版权编号验证
         validation(){
-            if(this.copyright_price !='' ){
+            // if(this.copyright_price !='' ){
                 if( this.copyright_num!=''){
                     util.ajax.post("/mall/auth_copyright/validate.do",{number:this.copyright_num}).then(e=>{
                         if(e.code==200){
@@ -229,7 +229,7 @@ import {_alert,_confrim,_openimg} from '../../libs/ui';
                 }else{
                     this.Toast('输入版权编号');
                 }
-            }
+            // }
         },
         onUpload(e){
             let _this = this;

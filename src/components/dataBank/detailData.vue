@@ -50,9 +50,32 @@
           let model = e.data.model; 
           let money = e.data.money;
           let instruction = e.data.instruction;
-          if (data == 1 || data == 2 || data == 3) {
+          if (data == 1 || data == 2) {
             // 是否有店铺，data为1 时是没有店铺
             that.$router.replace('/register')
+            return false
+          }else if (data == 3 && shoptype == 1) {
+            this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
+              if (e.code == 200) {
+                if(e.data.isPay == 1){
+                  that.$router.replace('/register')
+                }else if(e.data.isPay == 2){
+                  that.$router.replace('/info')
+                }
+              }
+            }).catch()
+            return false
+          } else if (data == 3 && shoptype == 2) {
+            this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
+              if (e.code == 200) {
+                if(e.data.isPay == 1){
+                  that.$router.replace('/register')
+                }else if(e.data.isPay == 2){
+                  that.$router.replace('/infoQ')
+                }
+              }
+            }).catch()
+//            that.$router.replace('/infoQ')
             return false
           }
           else if (data == 4) {
