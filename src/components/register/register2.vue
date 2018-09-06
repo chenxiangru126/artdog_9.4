@@ -175,8 +175,8 @@
                       return false;
                     }else if(a==1 && shoptype == 2){
                          url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype
-                      iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
-                      window.location.href=url;
+                         iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
+                         window.location.href=url;
 //                          this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
 //                            if (e.code == 200) {
 //                                if(e.data.isPay == 2){
