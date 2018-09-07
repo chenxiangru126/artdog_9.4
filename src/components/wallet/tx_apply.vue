@@ -52,12 +52,12 @@
             },
             tx_apply_e(){
                  var that = this,
-                    url = '/mall/orders/tixian.do',
+                    url = '/mall/bill/tixian.do',
                     _p = {
                         money: that.money,
                         billType: that.billType,
                         payType: that.payType,
-                        payType: that.pay_status
+                        // payType: that.pay_status
                     };
                     if(!that.input_money){
                         that.Toast('请输入金额');
@@ -67,7 +67,7 @@
                     if (e.code == 200) {
                         that._alert({
                             content: '提现成功',
-                             sureTxt:'确定',
+                            sureTxt:'确定',
                             yes: () => {
                                 history.back();
                             }

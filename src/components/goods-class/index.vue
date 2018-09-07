@@ -7,7 +7,7 @@
                     <input type="text" class="c2" v-model="goodsNameLike" placeholder="输入商品名称">
                     <p class="font-2 flex-1 t-c c3" @click="seh_qx">取消</p>
                 </div>
-            </div>
+            </div> 
         </div>
         <div class=" _right flex-v flex-j-c flex-a-c"  @click="goods_search">
                 <img src="../../static/images/search.svg" alt="" class="w1_5 h1_5">

@@ -251,7 +251,7 @@
                 url = '/mall/goods/viewOrder.do'
             }
              let data ={
-                 goodsId:this.goodsInfo.id,
+                 goodsId:this.goodsInfo.id, 
                  count:type?'1':this.number,
                  type:type?'1':'0'
                  }
