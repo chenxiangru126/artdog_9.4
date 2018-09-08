@@ -19,8 +19,8 @@
         <div class="thickness" v-show="isthickness">
             <p class="thickness_name">商品分类<img @click="cl_img" src="../../static/images/guanbi.png"/> </p>
             <p class="thickness_fl">
-                <span :class=" choose_co ?'th_xz':''" @click="clickfl(1)">{{flname}}</span>
-                <span :class=" choose_co ?'':'th_xz'" @click="clickfl(2)">二级分类</span>
+                <span :class=" choose_co ?'th_xz':''">{{flname}}</span>
+                <span :class=" choose_co ?'':'th_xz'">二级分类</span>
             </p>
             <div class="thickness_m">
              <p v-for="(item, index ) in listType" :key="index"  @click="click_in(index)">{{item.name}}</p>
@@ -170,13 +170,13 @@ import {_alert,_confrim,_openimg} from '../../libs/ui';
                 this.listType = this.goodsType||[];
             });
         },
-        clickfl(e){
-            if(e==1){
-                this.choose_co = true;
-            }else{
-                this.choose_co = false;
-            }
-        },
+        // clickfl(e){
+        //     if(e==1){
+        //         this.choose_co = true;
+        //     }else{
+        //         this.choose_co = false;
+        //     }
+        // },
         click_in(e){
             if(this.choose_co){
                 this.listType = this.goodsType[e].list;

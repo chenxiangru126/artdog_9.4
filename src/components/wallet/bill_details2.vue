@@ -2,11 +2,11 @@
     <div class="bill-details_b">
         <div class="w _cont">
             <div class="flex-h">
-                <p>订单号：</p>
+                <p>平台单号：</p>
                 <p>{{details.order_num}}</p>
             </div>
             <div class="flex-h">
-                <p>订单金额：</p>
+                <p>收款金额：</p>
                 <p>¥{{details.money}}</p>
             </div>
             <div class="flex-h">

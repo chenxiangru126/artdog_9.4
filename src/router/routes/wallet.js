@@ -23,7 +23,7 @@ const wallet = [{
         path: '/bill_details',
         name: 'bill_details',
         meta: {
-            title: "退款账单详情"
+            title: "收款账单详情"
         },
         components: {
             default: resolve => require(['../../components/wallet/bill_details.vue'], resolve),

@@ -20,7 +20,7 @@
        <span style="left:8%">填写信息</span>
        <span style="left:6%;">身份认证</span>
      </div>
-    
+     
     </div>
 
     <!-- 弹出窗 -->
@@ -102,7 +102,7 @@
                            this.money = 300
                            this.showWindow=true
                        
-                          return false
+                           return false
 
                        }else if(model == 'C'){
                            this.money = 500
@@ -171,7 +171,6 @@
                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=2'
                         window.location.href=url;
                         iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
-                        
                       return false;
                     }else if(a==1 && shoptype == 2){
                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=2'
@@ -196,17 +195,19 @@
                     }
                                
                                         // iosObject.toPayVC(url)
-//                          this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
-//                            if (e.code == 200) {
-//                                if(e.data.isPay == 2){
-//                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
-//                                    window.location.href=url;
-//                                }else if(e.data.isPay == 1){
-//                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+model+'&shop_type_id='+shop_type_id)
-//                                    window.location.href=url;
-//                                }
-//                            }
-//                        }).catch()
+
+                    //     this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
+                    //        if (e.code == 200) {
+                    //            if(e.data.isPay == 2){
+                    //                iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
+                    //                window.location.href=url;
+                    //            }else if(e.data.isPay == 1){
+                    //                iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+model+'&shop_type_id='+shop_type_id)
+                    //                window.location.href=url;
+                    //            }
+                    //        }
+                    //    }).catch()
+
                                 }
 //
 

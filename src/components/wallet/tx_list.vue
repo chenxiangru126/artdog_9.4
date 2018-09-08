@@ -2,15 +2,16 @@
     <div class="tx_list_b">
         <div class="tx_list-nav">
             <div class="list-nav-b flex-h flex-j-c" @click='nav_open'>
-                <p v-if="billType=='4'|| billType=='7'">保证金明细</p>
-                <p v-else-if="billType==6">提现明细</p>
+
+                <p v-if="billType=='4'||billType=='7'">保证金明细</p>
+                <p v-else-if="billType=='6'">提现明细</p>
                 <p class="t-c flex-v flex-j-c l_t">
                     <span class="span_up" v-if='nav_show'></span>
                     <span class="span_down" v-else></span>
                 </p>
                 <div class="nav_list_c nav_list_c2" v-if='nav_show'>
-                    <p @click="handle_nav(47)">保证金明细</p>
-                    <p @click="handle_nav(6)">提现明细</p>
+                    <p @click="handle_nav('4'+'7')">保证金明细</p>
+                    <p @click="handle_nav('6')">提现明细</p>
                 </div>
             </div>
             <div class="nav-cont m-t">
@@ -63,14 +64,14 @@
     export default {
         data() {
             return {
-                billType:'', // 47保证金明细 6提现明细
+                billType:'4'+'7', // 47保证金明细 6提现明细
                 nav_show: false,
                 items: [],
                 loading: false,
                 wrapperHeight: 0,
                 null_data: false,
                 page: 1,
-                pageSize: 20,
+                pageSize: 20
             }
         },
         mounted() {

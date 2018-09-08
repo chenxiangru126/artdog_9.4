@@ -1,6 +1,6 @@
 <template>
     <div class="list_m">
-          <div class="header_d" v-if="isheader">
+        <div class="header_d" v-if="isheader">
             <div class="search-top"></div>
             <div class="search_box flex-v flex-j-c">
                 <div class="font-1 search_box_1 flex-h">
@@ -191,7 +191,17 @@ import axios from 'axios';
                     this.goodsN = this.goodsType.length;
                 }).catch()
             },
-         initList(){
+            // serachGoods(){
+            //     let _p={
+            //         goodsNameLike:this.goodsNameLike
+            //     }
+            //     axios.post("/mall/goods/getGoodsSearch.do",_p).then(e=>{
+            //         var e=e.data;
+            //         this.goodsType = e.data||[];
+            //         this.goodsN = this.goodsType.length;
+            //     }).catch()
+            // },
+        initList(){
               let datar ={
                     showCount:20,
                     isUp:1,
@@ -261,7 +271,7 @@ import axios from 'axios';
               this.isheader = false;
               this.list = [];
               this.currentPage = 1;
-              this.initList();
+            //   this.initList();
           },
           on_sp_goods(n,e){
             //   debugger

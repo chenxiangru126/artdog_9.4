@@ -30,7 +30,7 @@ import util from "../../libs/util";
                 disX: 0,       //移动距离
                 txtStyle: '',
                 delWidth: 80
-            }
+            } 
         },
         props: ['item'],
         methods: {
