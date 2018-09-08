@@ -40,7 +40,7 @@
       <div class="content_one" @click="go_order_seller">
         <div class="one_left">
           <!-- <span class="iconfont icon-dingdan1" style="font-size: 1.625rem;margin-right: 1.25rem;"></span> -->
-          <img src="../../static/images/ding.png" alt="" style="margin-right: 1.25rem;vertical-align:middle ">
+          <img class="ding1" src="../../static/images/ding@2x.png" alt="" style="margin-right: 1.25rem;vertical-align:middle;width: 1.466667rem;height: 1.733333rem; ">
           <span>订单</span>
         </div>
         <div class="one_right">
@@ -50,7 +50,7 @@
       </div>
       <div class="content_one" @click="go_wallet">
         <div class="one_left">
-          <img src="../../static/images/qian.png" alt="" style="margin-right: 1.25rem;vertical-align: middle">
+          <img class="qianbao1" src="../../static/images/qianbao@2x.png" alt="" style="margin-right: 1.25rem;vertical-align: middle;width: 1.466667rem;height: 1.466667rem;">
           <span>钱包</span>
         </div>
         <div class="one_right">
@@ -60,7 +60,7 @@
       </div>
       <div class="content_one">
         <div class="one_left" style="flex:1" @click="go_goods">
-          <img src="../../static/images/shang.png" alt="" style="margin-right: 1.25rem;vertical-align:middle">
+          <img class="shangpin1" src="../../static/images/shangpin@2x.png" alt="" style="margin-right: 1.25rem;vertical-align:middle;width: 1.466667rem;height: 1.466667rem;">
           <span>商品</span>
         </div>
         <div class="one_right">

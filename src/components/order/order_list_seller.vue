@@ -248,7 +248,7 @@
             }, */
             yes_sell(a){
             //   先调用获取买家和卖家的id还有交易的证书编号
-                 debugger;
+                //  debugger;
                 //  console.log(a)  
                 var that = this;
                 this.id = a.id
@@ -257,13 +257,13 @@
                 let _p={
                     userId
                 }
-                debugger;
+                // debugger;
                 this.util.ajax.get('/admin/users/zyzhuce.do?userId='+this.userId).then((e)=>{
-                    debugger;
+                    // debugger;
                     console.log('11111111：'+e.status);
                     if(e.data.status == 1){
                         this.util.ajax.get('/mall/orders/getOrderDetail.do?id='+this.id).then((e)=>{
-                            debugger;
+                            // debugger;
                             if(e.code == 200){
                       let old_user_id = e.data.seller.sellerId
                                 // let old_user_id  ='59d31948-8260-4707-8d86-2759e2bd71bd'
@@ -279,7 +279,7 @@
                                     new_user_id,
                                     block_cert_numbere
                                 }
-                                debugger;
+                                // debugger;
                                 this.util.ajax.post('/admin/copyrightChange/save.do',_p).then((e)=>{
 //                                    debugger;
                                     if(e.code == 200){
@@ -289,7 +289,7 @@
                                             id,
                                             express_name
                                         }
-                                        debugger;
+                                        // debugger;
                                         this.util.ajax.post('/mall/orders/editOrder.do',_p).then((e)=>{
                                             debugger;
                                             if(e.code == 200){

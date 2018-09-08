@@ -34,7 +34,6 @@
                 </div>
                 <div class="list_introduce">
                     <span>{{item.goodsName}}</span>
-                    <!-- <span>万维旗舰店</span> -->
                 </div>
                 <div class="list_source">{{item.shop_name}}</div>
             </div>

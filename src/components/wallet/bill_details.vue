@@ -15,8 +15,8 @@
             </div>
             <div class="flex-h">
                 <p>支付方式</p>
-                 <p v-if="details.payType==1">支付宝 </p>
-                <p v-if="details.payType==2">微信</p>
+                 <p v-if="details.payWay==1">支付宝 </p>
+                <p v-if="details.payWay==2">微信</p>
             </div>
             <div class="flex-h">
                 <p>收款账号：</p>
@@ -51,8 +51,8 @@
             </div>
             <div class="flex-h">
                 <p>支付方式</p>
-                 <p v-if="details.payType==1">支付宝 </p>
-                  <p v-else-if="details.payType==2">微信</p>
+                 <p v-if="details.payWay==1">支付宝 </p>
+                  <p v-else-if="details.payWay==2">微信</p>
             </div>
             <div class="flex-h">
                 <p>退单状态：</p>
