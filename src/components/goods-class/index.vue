@@ -1,13 +1,13 @@
 <template>
     <div class="list_m">
-          <div class="header_d" v-if="isheader">
+        <div class="header_d" v-if="isheader">
             <div class="search-top"></div>
             <div class="search_box flex-v flex-j-c">
                 <div class="font-1 search_box_1 flex-h">
                     <input type="text" class="c2" v-model="goodsNameLike" placeholder="输入商品名称">
                     <p class="font-2 flex-1 t-c c3" @click="seh_qx">取消</p>
                 </div>
-            </div>
+            </div> 
         </div>
         <div class=" _right flex-v flex-j-c flex-a-c"  @click="goods_search">
                 <img src="../../static/images/search.svg" alt="" class="w1_5 h1_5">
@@ -191,7 +191,17 @@ import axios from 'axios';
                     this.goodsN = this.goodsType.length;
                 }).catch()
             },
-         initList(){
+            // serachGoods(){
+            //     let _p={
+            //         goodsNameLike:this.goodsNameLike
+            //     }
+            //     axios.post("/mall/goods/getGoodsSearch.do",_p).then(e=>{
+            //         var e=e.data;
+            //         this.goodsType = e.data||[];
+            //         this.goodsN = this.goodsType.length;
+            //     }).catch()
+            // },
+        initList(){
               let datar ={
                     showCount:20,
                     isUp:1,
@@ -261,7 +271,7 @@ import axios from 'axios';
               this.isheader = false;
               this.list = [];
               this.currentPage = 1;
-              this.initList();
+            //   this.initList();
           },
           on_sp_goods(n,e){
             //   debugger

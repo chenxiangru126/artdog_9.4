@@ -20,7 +20,7 @@
        <span style="left:8%">填写信息</span>
        <span style="left:6%;">身份认证</span>
      </div>
-    
+     
     </div>
 
     <!-- 弹出窗 -->
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> 
     </div>
     
 </div>
@@ -102,7 +102,7 @@
                            this.money = 300
                            this.showWindow=true
                        
-                          return false
+                           return false
 
                        }else if(model == 'C'){
                            this.money = 500
@@ -163,60 +163,51 @@
             //调取支付接口进行支付
               submit_e(a) {
                 //a 支付方式 1支付宝 2微信
-                var url;
+                var url; 
                 let model = this.model
                 let shoptype = this.shoptype  
                 let shop_type_id = this.shop_type_id
                     if(a==1 && shoptype== 1){
-                       url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype
-//                      iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shoptype='+shoptype+"&model="+model+"&shop_type_id="+shop_type_id)
-                      iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
-                      window.location.href=url;
+                        url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=2'
+                        window.location.href=url;
+                        iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
                       return false;
                     }else if(a==1 && shoptype == 2){
-                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype
-                      iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
-                      window.location.href=url;
-//                          this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
-//                            if (e.code == 200) {
-//                                if(e.data.isPay == 2){
-//                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
-//                                    window.location.href=url;
-//                                }else if(e.data.isPay == 1){
-//                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+model+'&shop_type_id='+shop_type_id)
-//                                    window.location.href=url;
-//                                }
-//                            }
-//                        }).catch()
-                           return false;
+                        url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=2'
+                        window.location.href=url;
+                        iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
+                         
+                         return false;
                     }else if(a==2 && shoptype == 1){
-                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype
-//                           iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shoptype='+shoptype+"&model="+model+"&shop_type_id="+shop_type_id)
-//                           window.location.href=url;
-                          iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
-                          window.location.href=url;
+                        url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype+'&fromType=2'
+                        window.location.href=url;
+                        iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
+                          
                            return false;
-                        }else if(a==2 && shoptype == 2){
-                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype
-                          iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
-                          window.location.href=url;
-//                           this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
-//                            if (e.code == 200) {
-//                                if(e.data.isPay == 2){
-//                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
-//                                    window.location.href=url;
-//                                }else{
-//                                    iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+model+'&shop_type_id='+shop_type_id)
-//                                    window.location.href=url;
-//                                }
-//                            }
-//                        }).catch()
-                           return false;
+                    }else if(a==2 && shoptype == 2){
+                        url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype+'&fromType=2'
+                        window.location.href=url;
+                        iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
+                        
+                        return false;
 //                        }
 //
-                        }
+                    }
                                
                                         // iosObject.toPayVC(url)
+
+                    //     this.util.ajax.post('/mall/shopauthentication/getPayStatus.do').then(e => {
+                    //        if (e.code == 200) {
+                    //            if(e.data.isPay == 2){
+                    //                iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
+                    //                window.location.href=url;
+                    //            }else if(e.data.isPay == 1){
+                    //                iosObject.showCheckOrderBtn(location.origin+'/index.html#/register2?shopytype=2&model='+model+'&shop_type_id='+shop_type_id)
+                    //                window.location.href=url;
+                    //            }
+                    //        }
+                    //    }).catch()
+
                                 }
 //
 

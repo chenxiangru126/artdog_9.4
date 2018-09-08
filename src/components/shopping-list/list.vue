@@ -30,9 +30,9 @@ import util from "../../libs/util";
                 disX: 0,       //移动距离
                 txtStyle: '',
                 delWidth: 80
-            }
+            } 
         },
-         props: ['item'],
+        props: ['item'],
         methods: {
         
             touch_start(ev) {
@@ -104,14 +104,15 @@ import util from "../../libs/util";
                              that.$parent.emptylist = true;
                         }
                          setTimeout(()=>{
-                         var index =  that.$parent.list.indexOf(that.item);
-                         that.$parent.list = [];
-                         that.$parent.list.splice(index, 1);
-                        that.$parent.initData();
-                        },1000)
+                            var index =  that.$parent.list.indexOf(that.item);
+                            that.$parent.list.splice(index, 1);
+                            that.$parent.list = [];
+                            that.$parent.initData();
+                        },300)
                     }
                    
                 }).catch()
+                event.stopPropagation();
             },
             delete_(){
 

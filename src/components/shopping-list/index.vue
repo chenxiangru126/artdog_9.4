@@ -8,7 +8,7 @@
         <div class="shop-lib"  @scroll="onScroll" ref="viewbox" >
             <list :item='it' v-for='(it,i) in list' :key='i'>
     
-            </list>
+            </list> 
              <div v-if="nulldata" style="text-align: center">没有更多数据...</div>
          </div>
         
@@ -88,8 +88,8 @@ import list from './list.vue';
                 util.ajax.post("/mall/cart/getCartData.do",data).then(e=>{
                     if(e.data.list&&e.data.list.length==0){
                         if(this.currentPage==1){
-                             this.emptylist = true;
-                             this.butdisplay= false;
+                             this.emptylist = true;  //空空如也
+                             this.butdisplay= false; //结算
                         }else{
                             this.nulldata = true;
                         }

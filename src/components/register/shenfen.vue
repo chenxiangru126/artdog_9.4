@@ -1,7 +1,12 @@
 <template>
-<div class="shenfen_wrap"> 
-    
 
+<div class="shenfen_wrap">  
+ 
+    <div class="header_if" v-show="showHeader">
+            <div class="_back" @click="back_center"></div>
+            <div class="_title">身份认证</div>
+    </div>        
+  
   <p class="c1 font-0 p-l-3 p-t"  style="color:#BABABA;box-sizing:border-box;margin: .325rem 0;">身份证正面：</p>
     <div class="upload"  @click="trigger_file">
         <img :src="avatar" alt=""  class="show_img" v-show="avatar !== null"> 
@@ -91,7 +96,8 @@ export default {
           show_bus:null,
           is_show:false, //默认是不显示企业身份认证
           model :null,
-          shoptype:null
+          shoptype:null,
+          showHeader:false //自定义头部
          }
          
      },
@@ -119,7 +125,7 @@ export default {
           }  
             
      
-        
+      // this._check()  
        
         
      },
@@ -127,6 +133,7 @@ export default {
         //书写弹出层
         //1.审核中  
           _check(){
+            this.showHeader=true
             let that = this
            const html=`<div class='p-b'>
               <img src='/images/shenhe.png' class='w4 log_alert_logo' />
@@ -147,6 +154,7 @@ export default {
 
         // 2.审核成功
              _success(){
+               this.showHeader=true
                let that = this
                const html=`<div class='p-b'>
               <img src='/images/successdog.png' class='w4 log_alert_logo' />
@@ -176,6 +184,7 @@ export default {
              },
          //3.审核失败
               _fail(instruction){
+                this.showHeader=true
                 let that = this
                 const html=`<div class='p-b'>
               <img src='/images/faildog.png' class='w4 log_alert_logo' />
@@ -203,6 +212,10 @@ export default {
                 }
             }) 
               },
+          //自定义头部返回按钮
+          back_center(){
+            iosObject.closeHtml();
+          },
         //上传图片 
          trigger_file() {
                 // 获取input，添加点击事件
@@ -325,6 +338,8 @@ export default {
 
 <style lang="less">
 @import "shenfen.less";
+  
 </style>
 
 
+ 

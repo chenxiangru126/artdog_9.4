@@ -82,7 +82,7 @@
             }
         },
         created(){
-            this.initData();
+            this.initData(); 
         },
         mounted() {
             var that = this;

@@ -155,7 +155,7 @@
                     name: 'tx_apply',
                     query: {
                         money: this.details.money
-                    }
+                    } 
                 })
             },
             //退保证金

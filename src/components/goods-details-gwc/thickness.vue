@@ -4,7 +4,7 @@
     <div class="dialog_layer" >
         <div class="layer_cont_1 cont_1_alert">
             <div class="p-b p-t-2">
-                <!-- <div class="layer_title"></div> -->
+                <!-- <div class="layer_title"></div> --> 
                 <div class="c6 font-3 w t-c over-h p-l p-r">
                     <div v-if='copyPriceShow && goodsShow'  style="display: flex;margin-bottom: 1.5rem;margin-top: .5rem;justify-content: center;align-items: center;">
                         <span :style="typeN?'color: #9E9E9E;':''">购买商品</span>
@@ -43,28 +43,28 @@
 
     export default {
 
-         data () {
-    return {
-       typeN:false,
-       copyPriceShow:false,
-       goodsShow:false
-      }
-    },
-     props: ['num','id','isShare','copyPrice','price'],
-    created() {
-         if(this.$parent.copyPrice == ''){
-             this.copyPriceShow=false
-         }else{
-             this.copyPriceShow=true
-             this.typeN = true
-         }
-          if(this.$parent.price == ''|| !this.$parent.price){
-             this.goodsShow=false
-             
-         }else{
-             this.goodsShow=true
-             this.typeN=false
-         }  
+        data () {
+            return {
+            typeN:false,
+            copyPriceShow:false,
+            goodsShow:false
+            }
+        },
+        props: ['num','id','isShare','copyPrice','price'],
+        created() {
+            if(this.$parent.copyPrice == ''){
+                this.copyPriceShow=false
+            }else{
+                this.copyPriceShow=true
+                this.typeN = true
+            }
+            if(this.$parent.price == ''|| !this.$parent.price){
+                this.goodsShow=false
+                
+            }else{
+                this.goodsShow=true
+                this.typeN=false
+            }  
         },
         methods: {
             reduction(){
@@ -84,7 +84,7 @@
 //            debugger;
 
                 let typeN = this.typeN
-                if(!typeN){
+                if(!typeN){ 
                     this.$parent.Place_order(this.typeN);
                 }else if(typeN){
                     this.$parent.Place_order(this.typeN);
