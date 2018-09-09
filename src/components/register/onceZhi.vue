@@ -52,11 +52,11 @@ export default {
                 let shoptype = this.shoptype  
                     if(a==1 && shoptype == 1){
                          url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=1'
-                          iosObject.showCheckOrderBtn(location.origin+'/index.html#/wallet')
+                          // iosObject.showCheckOrderBtn(location.origin+'/index.html#/wallet')
                           window.location.href=url;
                     }else if(a==1 && shoptype == 2){
                          url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=1'
-                          iosObject.showCheckOrderBtn(location.origin+'/index.html#/wallet')
+                          // iosObject.showCheckOrderBtn(location.origin+'/index.html#/wallet')
                           window.location.href=url;
                     }else if(a==2 && shoptype == 1){
                          url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype+'&fromType=1'

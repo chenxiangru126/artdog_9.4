@@ -103,16 +103,16 @@ import util from "../../libs/util";
                              that.$parent.butdisplay = false;
                              that.$parent.emptylist = true;
                         }
-                         setTimeout(()=>{
-                            var index =  that.$parent.list.indexOf(that.item);
-                            that.$parent.list.splice(index, 1);
-                            that.$parent.list = [];
-                            that.$parent.initData();
-                        },300)
+                        //  setTimeout(()=>{
+                        //     var index =  that.$parent.list.indexOf(that.item);
+                        //     that.$parent.list.splice(index, 1);
+                        //     that.$parent.list = [];
+                        //     that.$parent.initData();
+                        // },300)
                     }
                    
                 }).catch()
-                event.stopPropagation();
+                // event.stopPropagation();
             },
             delete_(){
 

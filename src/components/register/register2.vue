@@ -169,23 +169,24 @@
                 let shop_type_id = this.shop_type_id
                     if(a==1 && shoptype== 1){
                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=2'
+                        // alert(url);
                         window.location.href=url;
                         iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
                       return false;
                     }else if(a==1 && shoptype == 2){
                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=1&model='+model+'&shoptype='+shoptype+'&fromType=2'
+                        // alert(url);
                         window.location.href=url;
-                        iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
-                         
+                        iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ') 
                          return false;
                     }else if(a==2 && shoptype == 1){
                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype+'&fromType=2'
                         window.location.href=url;
                         iosObject.showCheckOrderBtn(location.origin+'/index.html#/info')
-                          
                            return false;
                     }else if(a==2 && shoptype == 2){
                         url = location.protocol+'//'+location.hostname+'/mall/shopauthentication/bailMoney?payWay=2&model='+model+'&shoptype='+shoptype+'&fromType=2'
+                        // alert(url);
                         window.location.href=url;
                         iosObject.showCheckOrderBtn(location.origin+'/index.html#/infoQ')
                         
