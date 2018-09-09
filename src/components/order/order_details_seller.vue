@@ -311,7 +311,7 @@
                 express_name: null, //物流公司名称
                 no_sell_show:false,//暂不出售弹出框
                 seller_banquan_show:false,//确定按钮隐藏弹框
-                
+                current_star_status: null, //0 空🌟 1半星🌟 2满星🌟
               
             }
         },
@@ -341,6 +341,8 @@
                     that.discussDetail = e.data.discussDetail || {};
                     that.state = e.data.orderDetail.state;
                     that.express_id = e.data.orderId;
+                    that.current_star_status = e.data.discussDetail.current_star_status;
+                    
                 }).catch()
             },
             go_goods_details() {
@@ -557,23 +559,29 @@
                             }
                         }).catch()
                     },
-                    no() {}
+                    no(){
+
+                    }
                 });
                   event.stopPropagation();
             },
             handle_star_click_num(a) {
+                // debugger
+               console.log("current_star_status"+this.current_star_status)
                 if (this.discussDetail.score >= a) {
                     return 'real-stars'
                 } else if (this.discussDetail.score == a) {
-                    if (this.current_star_status == 1) {
+                     return 'real-stars'
+                } else {
+
+                     if (this.current_star_status == 1) {
                         return 'half-stars'
                     } else if (this.current_star_status == 2) {
-                        return 'real-stars'
+                      
                     } else {
                         return 'empty-stars'
                     }
-                } else {
-                    return 'empty-stars'
+                    // return 'empty-stars'
                 }
             },
     

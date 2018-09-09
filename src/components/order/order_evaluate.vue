@@ -203,11 +203,13 @@
                 if (this.current_star_status > 2) this.current_star_status = 0;
             },
             handle_star_click_num(a) {
+                debugger
                 if (this.star_click_num > a) {
                     return 'real-stars'
                 } else if (this.star_click_num == a) {
                     this.score_num = a - 1;
                     if (this.current_star_status == 1) {
+                        console.log('666666')
                         this.score_num = this.score_num + 0.5;
                         return 'half-stars'
                     } else if (this.current_star_status == 2) {
@@ -228,7 +230,7 @@
                         goodsId: that.$route.query.goodsId,
                         content: that.content,
                         score: that.score_num,
-                        upimg_items: that.upimg_items,
+                        urls: that.upimg_items,
                     };
                 this.util.ajax.post(url, _p).then(e => {
                     if (e.code == 200) {
