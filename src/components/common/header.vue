@@ -2,7 +2,7 @@
     <div class="header_b">
         <div class="ios_log" v-show="isIos"></div>
         <div class="w rela">
-            <div class="_left" v-if='route_name=="switch"||route_name=="shopping_list"||route_name=="order_list_buyer"||route_name=="detailData"||route_name=="register"||route_name=="goods-class"||route_name=="goods-details-sCart"||route_name=="register"' @click='back_ios'></div>
+            <div class="_left" v-if='route_name=="switch"||route_name=="shopping_list"||route_name=="order_list_buyer"||route_name=="detailData"||route_name=="register"||route_name=="goods-class"||route_name=="goods-details-sCart"' @click='back_ios'></div>
             <div class="_left" v-else @click='back_event'></div>
             <!--<div class="_left" v-else-if='route_push=="register2?shoptype=1&model=D&shop_type_id=4" ||route_push=="register2?shoptype=1&model=E&shop_type_id=5"' @click='back_pay'></div>-->
             <div class="w t-c _center">{{title_name}}</div>

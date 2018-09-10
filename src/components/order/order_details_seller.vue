@@ -233,6 +233,10 @@
                     </div>
                     <div class="order-details-lib_b order-p-t-1" style="min-height:9rem">
                         <p class="flex-1 flex-h"> {{discussDetail.content}}</p>
+                        <!-- <p class="flex-1 flex-h"> {{discussDetail.discussTime}}</p> -->
+                        <div class='' v-for="(url,index) in discussDetail.flist" :key="index">
+                           <img style='width="50px";height:50px;object-fit:cover' :src="url" alt=""> 
+                        </div>
                     </div>
                 </div>
                 <div class="title-l">备注</div>
