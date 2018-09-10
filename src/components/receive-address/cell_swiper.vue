@@ -95,7 +95,7 @@
                         setTimeout(()=>{
                             that.$parent.initData();
                         },1000)
-                       
+                        
                     }
                    
                 }).catch()

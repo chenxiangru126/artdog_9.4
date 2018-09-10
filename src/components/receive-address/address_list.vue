@@ -36,7 +36,7 @@
                 hasSelect: false, //是否有选中状态
                 delete_items: [] //删除的数组
             }
-        },
+        }, 
         components: {
             cell: cellSwiper
         },

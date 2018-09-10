@@ -5,7 +5,7 @@
     <div class="header_if" v-show="showHeader">
             <div class="_back" @click="back_center"></div>
             <div class="_title">身份认证</div>
-    </div>        
+    </div>         
   
   <p class="c1 font-0 p-l-3 p-t"  style="color:#BABABA;box-sizing:border-box;margin: .325rem 0;">身份证正面：</p>
     <div class="upload"  @click="trigger_file">
