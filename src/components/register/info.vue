@@ -89,7 +89,9 @@ export default {
         }
     },
     created() {
-        setTimeout(()=>{//判断是否缴纳保证金，未缴纳跳转到选择类型页面
+        let model   = this.$route.query.model
+        if(model== 'D' || model == 'E'){
+            setTimeout(()=>{//判断是否缴纳保证金，未缴纳跳转到选择类型页面
             
             this.util.ajax.post("/mall/shopauthentication/getPayStatus.do").then(e=>{
                 if(e.data.isPay != 2){
@@ -101,6 +103,10 @@ export default {
             })
            
         },400)
+        }else{
+            this.showCover=false
+        }
+        
         // setTimeout(()=>{
         //      this.showCover=false
         // },600)
