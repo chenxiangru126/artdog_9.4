@@ -32,18 +32,18 @@
             提交
         </div>
         <!-- <div class="dialog_layer">
-                                        <div class="layer_cont_1 cont_1_alert">
-                                            <div class="flex-v flex-j-c">
-                                                <p class="c6 font-3 w t-c">评价成功</p>
-                                            </div>
-                                            <div class="layer_cont_btn">
-                                                <div class="layer_cont_confirm flex-h flex-j-c">
-                                                    <p>取消</p>
-                                                    <p>完成</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
+            <div class="layer_cont_1 cont_1_alert">
+                <div class="flex-v flex-j-c">
+                    <p class="c6 font-3 w t-c">评价成功</p>
+                </div>
+                <div class="layer_cont_btn">
+                    <div class="layer_cont_confirm flex-h flex-j-c">
+                        <p>取消</p>
+                        <p>完成</p>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </template>
 

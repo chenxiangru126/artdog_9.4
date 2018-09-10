@@ -570,22 +570,17 @@
                   event.stopPropagation();
             },
             handle_star_click_num(a) {
-                // debugger
-               console.log("current_star_status"+this.current_star_status)
+
                 if (this.discussDetail.score >= a) {
                     return 'real-stars'
-                } else if (this.discussDetail.score == a) {
-                     return 'real-stars'
                 } else {
-
-                     if (this.current_star_status == 1) {
+                    var score_all = Number(this.discussDetail.score) +1 ;
+      
+                    if(score_all >a ) {
                         return 'half-stars'
-                    } else if (this.current_star_status == 2) {
-                      
-                    } else {
-                        return 'empty-stars'
+                    }else{
+                           return 'empty-stars'
                     }
-                    // return 'empty-stars'
                 }
             },
     
