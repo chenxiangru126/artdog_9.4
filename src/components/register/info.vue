@@ -1,7 +1,9 @@
 <template>
 <div>
-   <div class="info_wrap">
+    <div id='black_cover' :style="showCover?'display:none':'display:block'">
+    <div class="info_wrap" >
     <!-- 填写信息 -->
+    
       <p class="c1 font-0 p-l-r p-t " style="color:#BABABA;box-sizing:border-box">以下信息均为必填项。</p>
       <p class="c1 font-0 p-l-r p-b" style="color:#BABABA;box-sizing:border-box">除了网店名称外，其他信息我们将为您隐藏。</p>
       <div class="input_b" style="color:#BEBEBE">
@@ -62,6 +64,7 @@
 
     </myAddress>
     </transition>
+    </div>
    </div>
 
 
@@ -82,18 +85,26 @@ export default {
          model:null,
          shoptype:null,
          shop_type_id:null,
+         showCover:true
         }
     },
     created() {
         setTimeout(()=>{//判断是否缴纳保证金，未缴纳跳转到选择类型页面
+            
             this.util.ajax.post("/mall/shopauthentication/getPayStatus.do").then(e=>{
                 if(e.data.isPay != 2){
                 this.Toast("支付未完成")
-                this.$router.push({path: '/register1?shoptype=2'});
+                this.$router.push({path: '/register1?shoptype=1'});
+                }else{
+                    this.showCover=false
                 }
             })
-        },300)
-
+           
+        },400)
+        // setTimeout(()=>{
+        //      this.showCover=false
+        // },600)
+        
     },
     mounted(){
 
@@ -215,7 +226,16 @@ export default {
 </script>
 <style lang="less">
  @import 'info.less';
-
+ #black_cover{
+        position: fixed;
+        top: 4.266rem;
+        // left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0,0,0,0.3);
+        display:none;
+        z-index:1000;
+ }
 </style>
 
 

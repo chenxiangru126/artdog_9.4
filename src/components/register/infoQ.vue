@@ -1,5 +1,6 @@
 <template>
 <div>
+   <div id='black_cover' :style="showCover?'display:none':'display:block'">
    <div class="info_wrap">
     <!-- 填写信息 -->
       <p class="c1 font-0 p-l-r p-t " style="color:#BABABA;box-sizing:border-box">以下信息均为必填项。</p>
@@ -66,7 +67,7 @@
     <myAddress v-if='show_select_address'  @listen_to_child_event="get_colose" class="my_address">
 
     </myAddress>
-
+    </div>
    </div>
 
 
@@ -87,6 +88,7 @@ export default {
           model:null,
           shoptype:null,
           shop_type_id:null,
+          showCover:true
           
         }
     },
@@ -95,10 +97,15 @@ export default {
             this.util.ajax.post("/mall/shopauthentication/getPayStatus.do").then(e=>{
                 if(e.data.isPay != 2){
                 this.Toast("支付未完成")
-                this.$router.push({path: '/register1?shoptype=1'});
+                this.$router.push({path: '/register1?shoptype=2'});
+                }else{
+                    this.showCover=false
                 }
             })
-        },300)
+        },400)
+        // setTimeout(()=>{
+            
+        // },800)
 
     },
    mounted(){
@@ -230,5 +237,14 @@ export default {
 </script>
 <style lang="less">
  @import 'info.less';
-
+#black_cover{
+    position: fixed;
+    top: 4.266rem;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    display:none;
+    z-index:1000;
+ }
 </style>

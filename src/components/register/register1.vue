@@ -140,7 +140,7 @@
         methods:{ 
              // 返回上一级
               back_event(){
-                history.back();
+                this.$router.push('/register')
                },
                dianji(index,model,shop_type_id){
                  this.isActive = index
