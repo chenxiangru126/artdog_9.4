@@ -9,10 +9,10 @@
                     <cell :it='it' v-for='it in items' :key='it.id'>
         
                     </cell>
-                </div>
+                </div> 
                 <div class="h6 w"></div>
             </div>
-            <div class="submit-btn-1-fix" v-if="select_status">
+            <div class="submit-btn-1-fix" v-if="!select_status">
                 <div class="submit-btn-1-fixed"  @click='all_delete'>
                     全部删除
                 </div>
@@ -36,18 +36,22 @@
                 hasSelect: false, //是否有选中状态
                 delete_items: [] //删除的数组
             }
-        },
+        }, 
         components: {
             cell: cellSwiper
         },
         created() {
             this.initData();
-            this.$root.eventHup.$on('receive_address_check', this.process_data);
+            this.$root.eventHup.$on('receive_address_check', this.process_data);//接收header传过来的值，并使用process_data来接收
         },
         watch: {
             select_status: function(new_value, old_value) {
-                if (new_value) {
+                if (new_value) {//全选
+                    console.log('new_value'+new_value)
+                    console.log('old_value'+old_value)
                     this.items.forEach(e => {
+                        console.log(this.items)
+                        console.log(e)
                         e.check = true;
                     })
                 } else {
@@ -56,7 +60,7 @@
                     })
                 }
             },
-            items: {　　　　
+            items: {　　
                 handler(newValue, oldValue) {　　
                     var that = this;　　
                     that.delete_items = [];　　
@@ -108,7 +112,7 @@
                 console.log('process_data', a);
                 that.select_status = null;
                 setTimeout(() => {
-                    that.select_status = a;
+                    that.select_status = a; //接收到的全选全不选状态，赋值给select_status
                 }, 200)
     
             },

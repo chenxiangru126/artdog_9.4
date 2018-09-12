@@ -10,10 +10,10 @@
                 <img src="../../static/images/search.svg" alt="" class="w1_5 h1_5">
             </div>
 
-            <!--<div class=" _right flex-v flex-j-c flex-a-c c6" v-if='route_name=="shopping_list"' @click="shopping_chick">-->
-                <!--<span v-if="shopping_checked">全不选</span>-->
-                <!--<span v-else >全选</span>-->
-            <!--</div>-->
+            <div class=" _right flex-v flex-j-c flex-a-c c6" v-if='route_name=="shopping_list"' @click="shopping_chick">
+                <span v-if="shopping_checked">全不选</span>
+                <span v-else >全选</span>
+            </div>
     
             <div class=" _right flex-v flex-j-c flex-a-c" v-if='route_name=="wallet"' @click="go_mx">
                 <img src="../../static/images/mx-icon.png" alt="" class="mx-btn">
@@ -46,7 +46,7 @@
                 isIos: isAndroidOrIos() == 1 ? true : false,
                 //地址列表-删除功能-【全选／全不选】状态切换-参数
                 address_checked: false, //false 全不选  true 全选
-//                shopping_checked: false, //false 全不选  true 全选
+                shopping_checked: false, //false 全不选  true 全选
                 isShow:true,
                 realName:null,
                 idCard_zheng:null,
@@ -118,22 +118,23 @@
                 }
             },
             process_child_event(content) {
+                console.log('header'+content)
                 // 处理地址列表，全选状态，接收参数
                 if (this.route_name == 'address_list') {
                     this.address_checked = content.address_checked
                 }
-//                if(this.route_name == 'shopping_list'){
-//                    this.shopping_checked = content.shopping_checked
-//                }
+                if(this.route_name == 'shopping_list'){
+                   this.shopping_checked = content.shopping_checked
+                }
             },
             address_chick() {
                 this.address_checked = !this.address_checked;
-                this.$root.eventHup.$emit('receive_address_check', this.address_checked)
+                this.$root.eventHup.$emit('receive_address_check', this.address_checked)//将全选全不选状态传递给子组件
             },
-//            shopping_chick() {
-//                this.shopping_checked = !this.shopping_checked;
-//                this.$root.eventHup.$emit('receive_shopping_check', this.shopping_checked)
-//            },
+            shopping_chick() {
+                this.shopping_checked = !this.shopping_checked;
+                this.$root.eventHup.$emit('receive_shopping_check', this.shopping_checked)
+            },
             go_mx() {
                 this.$router.push({
                     name: 'tx_list'

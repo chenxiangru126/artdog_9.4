@@ -31,7 +31,7 @@
             return {
                 money:this.$route.query.money,
                 input_money:null,//输入金额
-                share_log: false,
+                share_log: false, 
                 billType:6, // billType账单类型 1订单账单 2店铺账单 3平台手续费 4保证金 5退款账单 6提现
                 payType:2,//payType进账/出账， 1进账 2出账
                 pay_status: 1,//1 支付宝 2微信
@@ -54,13 +54,16 @@
                  var that = this,
                     url = '/mall/bill/tixian.do',
                     _p = {
-                        money: that.money,
+                        money: that.input_money,
                         billType: that.billType,
                         payType: that.payType,
                         // payType: that.pay_status
                     };
                     if(!that.input_money){
                         that.Toast('请输入金额');
+                        return false;
+                    }else if(that.input_money==0){
+                        that.Toast('请输入大于0的金额');
                         return false;
                     }
                 this.util.ajax.post(url, _p).then(e => {
@@ -69,7 +72,7 @@
                             content: '提现成功',
                             sureTxt:'确定',
                             yes: () => {
-                                history.back();
+                                this.$router.push('/wallet');
                             }
                         });
                     }
