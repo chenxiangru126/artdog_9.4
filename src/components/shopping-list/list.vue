@@ -1,20 +1,20 @@
 <template>
     <div class="lib_b_1"  @touchstart="touch_start"  @touchmove="touch_move"  @touchend="touch_end" :style="txtStyle" >
-            <div class="lib_b_1_c "    :class="item.check?'lib-unselected':'lib-selected'" >
-                <div class="transparent"  @click="click_tag(item)"></div>
+            <div class="lib_b_1_c "    :class="it.check?'lib-unselected':'lib-selected'"> 
+                <div class="transparent"  @click="click_tag(it)"></div>
                 <div class="line"></div>
-                <p class="shop_name" @click="tostore(item.friendsId)"><span>{{item.shop_name}}</span> <em></em></p>
-                <div class="shop_info" @click="toGoodsDes($event,item.goodsId)">
+                <p class="shop_name" @click="tostore(it.friendsId)"><span>{{it.shop_name}}</span> <em></em></p>
+                <div class="shop_info" @click="toGoodsDes($event,it.goodsId)">
                     <div class="div_2">
-                        <p class="font-2 c1 shop_n">{{item.goodsName}}</p>
-                        <p class="c9  h2 line-h-2 shop_pic" :class="item.type==0?'shop_pic_cl':'shop_pic_cl2'"><span style="font-size: .933333rem">￥</span>{{item.price}}/个 * {{item.count}}<span v-if="item.type==1">(版权)</span></p>
+                        <p class="font-2 c1 shop_n">{{it.goodsName}}</p>
+                        <p class="c9  h2 line-h-2 shop_pic" :class="it.type==0?'shop_pic_cl':'shop_pic_cl2'"><span style="font-size: .933333rem">￥</span>{{it.price}}/个 * {{it.count}}<span v-if="it.type==1">(版权)</span></p>
                     </div>
-                    <img class="shop_img" v-bind:src="item.imgUrl">
+                    <img class="shop_img" v-bind:src="it.imgUrl">
                 </div>
             </div>    
             <div @click.stop="delete_()"  class="delete_icon"></div>
     </div>
-</template>
+</template> 
 
 <style lang="less">
     @import './index.less';
@@ -32,7 +32,24 @@ import util from "../../libs/util";
                 delWidth: 80
             } 
         },
-        props: ['item'],
+        props: ['it','select_status','delete_items'],
+        watch:{
+            select_status:function(new_value, old_value) {
+              
+                if (this.select_status == true) {//全选
+                
+                
+                } else {
+                    
+                    this.$parent.total =Math.abs( this.$parent.total-this.it.count*this.it.price);
+                    var index = this.$parent.ids.indexOf(this.it.id);
+                    this.$parent.ids.splice(index, 1); 
+                }
+                deep: true　　
+            },
+            
+
+        },
         methods: {
         
             touch_start(ev) {
@@ -93,26 +110,22 @@ import util from "../../libs/util";
                 var that = this,
                     url = '/mall/cart/deleteCart.do';
                 this.util.ajax.post(url, {
-                        ids: that.item.id
+                        ids: that.it.id
                 }).then(e => {
                     if(e.code==200){
                         that.Toast('删除成功');
-                        var index =  that.$parent.list.indexOf(that.item);
-                        that.$parent.list.splice(index, 1);
-                        if(that.$parent.list.length==0){
+                        
+                        var index =  that.$parent.items.indexOf(that.it);
+                        that.$parent.items.splice(index, 1);
+                        if(that.$parent.items.length==0){
                              that.$parent.butdisplay = false;
                              that.$parent.emptylist = true;
                         }
-                        //  setTimeout(()=>{
-                        //     var index =  that.$parent.list.indexOf(that.item);
-                        //     that.$parent.list.splice(index, 1);
-                        //     that.$parent.list = [];
-                        //     that.$parent.initData();
-                        // },300)
+                       
                     }
                    
                 }).catch()
-                // event.stopPropagation();
+              
             },
             delete_(){
 
@@ -120,20 +133,29 @@ import util from "../../libs/util";
             tostore(id){
                 iosObject.toFriendMainPage(id);
             },
-            click_tag(item){
-                if(item.check){
-                    this.$parent.total = Math.abs(this.$parent.total+item.count*item.price);
-                    this.$parent.ids.push(item.id);
-                    this.$parent.counts.push(item.count)
-                    this.$parent.types.push(item.type)
-                    this.$parent.goodsIds.push(item.goodsId)
-
-                }else{
-                    this.$parent.total =Math.abs( this.$parent.total-item.count*item.price);
-                    var index = this.$parent.ids.indexOf(item.id);
+            click_tag(it){
+                
+                if(!it.check){
+                    
+                    this.$parent.total =Math.abs( this.$parent.total-it.count*it.price);
+                    var index = this.$parent.ids.indexOf(it.id);
                     this.$parent.ids.splice(index, 1);
+                    console.log(this.it)
+                    this.$parent.Allprice = it.count*it.price //获取点击取消的商品金额
+
+                    console.log( this.$parent.Allprice)
+
+                }else if(it.check){
+                    console.log(this.it)
+                    this.$parent.total = Math.abs(this.$parent.total+it.count*it.price);
+                    this.$parent.ids.push(it.id);
+                    this.$parent.counts.push(it.count)
+                    this.$parent.types.push(it.type)
+                    this.$parent.goodsIds.push(it.goodsId)
+                    //  alert("bbbbbbbbbbbbb")
+                    
                 }
-                item.check = !item.check;
+                it.check = !it.check;
             },
             toGoodsDes(e,id){
                 if(e.target.className.indexOf('delete_icon')==-1){
@@ -141,16 +163,18 @@ import util from "../../libs/util";
                 }
                 
             },
-            select_event(a){
-                let select_status=this.$parent.select_status;
-                if(!select_status){
-                    a.check=!a.check;
-                    this.$parent.select_shopping_send(a)
-                }else{
-                    a.check=!a.check;
-                }
+            // select_event(a){
+            //     console.log(a)
+            //     let select_status=this.$parent.select_status;
+            //     if(select_status){
+            //         a.check=!a.check;
+            //         // this.$parent.select_shopping_send(a)
+                    
+            //     }else{
+            //         a.check=!a.check;
+            //     }
 
-            }
+            // }
         }
     }
 </script>

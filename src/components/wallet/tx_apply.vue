@@ -72,7 +72,7 @@
                             content: '提现成功',
                             sureTxt:'确定',
                             yes: () => {
-                                history.back();
+                                this.$router.push('/wallet');
                             }
                         });
                     }
