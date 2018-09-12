@@ -29,7 +29,7 @@
             <div class="goods_manager">
                <div class="man_img"><img v-bind:src="goodsInfo.photo"/></div> 
                 <span class="name">{{goodsInfo.shop_name}}</span>
-                <span v-if="isShare" @click="gostore(goodsInfo.friendsId)" class="but">进店逛逛</span>
+                <span v-if="isShare" @click="gostore" class="but">进店逛逛</span>
             </div>
             <div class="yk_bjt"><label class="triangle-right"></label><img src="../../static/images/hole_hole.png"/><label class="triangle-left"></label></div>
             <div class="goods_describe">
@@ -176,16 +176,7 @@
                             _this.items.push({url:e.data.goods.urlShow[n],iswht:iswht});
                         };
                     }
-                    // if(this.copyPrice == '' || !this.copyShow){
-                    //     this.copyShow = false;
-                    // }else{
-                    //     this.copyShow = true
-                    // }
-                    // if(this.price == ''|| !this.price){
-                    //     this.goodsShow = false
-                    // }else{
-                    //     this.goodsShow = true
-                    // }
+                    
                 }
                 
             }).catch()
@@ -210,7 +201,7 @@
 
         },
         // ----------------------------------------------//
-        // 这个是判断是不是登陆状态
+        // // 这个是判断是不是登陆状态
         user_action(a){
             let _t = this;
             this.userGetinfo(function(){
@@ -267,6 +258,7 @@
         },
         to_gwc(){
             let _t = this;
+            
             this.userGetinfo(function(){
                 _t.$router.push({path: '/shopping-list'});
             })

@@ -27,7 +27,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div  v-else>
+                        <div v-else>
                             <div class="title-l">收货信息</div>
                             <div class="order-details-lib_b order-p-t-1" @click="add_address">
                                 <p class="flex-1 t-c c6"> 您还没有收货地址，去添加一个吧！</p>
@@ -93,7 +93,7 @@
                 </div>
 
                     <div class="apply_btn flex-h">
-                        <div class="flex-3 c1 font-1 t-c">总计 ¥{{details.allMoney}}</div>
+                        <div class="flex-3 c1 font-1 t-c">总计 ¥{{details.allMoney.toFixed(2)}}</div>
                         <div class="flex-1" @click="submit_e">提交订单</div>
                     </div>
                     <div class="h5"></div>
