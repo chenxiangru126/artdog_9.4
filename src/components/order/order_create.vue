@@ -36,7 +36,7 @@
                     </div>
                     
                     <div  v-for="(it,index) in details.list" :key="it.id">
-                         <div class="order-details-lib_b " :class="index>0&&details.list.length!=1?'bg-style-b bg-style-t':''" 
+                         <div class="order-details-lib_b " :class="index>0&&details.list.length!=1?'bg-style-b bg-style-t':''"
                         :style="index==0?'margin-top:0.8rem':''">
                         <div class="flex-h font-2 c1" @click="open_friend">
                             <p class="" >{{it.shop_name}}</p>
@@ -86,9 +86,9 @@
                             <textarea name="" id="" cols="30" rows="5" v-model.trim="remark" placeholder="需要开发票，公司抬头：某某某有限公司"></textarea>
                         </div>
                     </div>                     -->
-                    <div class="title-l">备注</div>
+                    <div  class="title-l">备注</div>
                         <div class="text-area order_remark">
-                            <textarea name="" id="" cols="30" rows="5" v-model.trim="remark" placeholder="需要开发票，公司抬头：某某某有限公司"></textarea>
+                            <textarea name="" id="" cols="30" rows="5"  v-model.trim="remark" placeholder="需要开发票，公司抬头：某某某有限公司"></textarea>
                         </div>
                 </div>
 
@@ -115,7 +115,7 @@
                 addressMap: {},
                 typeList:null,
                 address_id: null, //地址ID
-                remark: null, //备注
+                remark: '', //备注
                 money:null,
                 allType:null,
                 orderId:null,
@@ -192,6 +192,7 @@
                 iosObject.toFriendMainPage(this.friendsId);
             },
             submit_e() {
+
 //                debugger
                 let that = this;
                 let url, _p;
@@ -256,6 +257,7 @@
                         count: that.$route.query.count,
                         type: that.$route.query.type,
                         recive_address: that.address_id,
+
                         remark: that.remark,
                     }
                     if(that.$route.query.type==1){

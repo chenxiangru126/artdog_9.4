@@ -1,5 +1,8 @@
 <template>
     <div class="shop_b_list">
+        <div class="ser_img" v-if="showBlack">
+            <div class="_black"></div>
+        </div>
         <div class="cart_m" v-if="emptylist">
             <em></em>
             <p>你的购物车里空空如也</p>
@@ -27,6 +30,18 @@
 
 <style lang="less">
     @import './index.less';
+    .ser_img{
+        position: fixed;
+        display: flex;
+        z-index: 9999999;
+        top: 1.6rem;
+        right: .866667rem;
+        ._black{
+            background: #232323;
+            width: 3.666667rem;
+            height: 1.666667rem;
+        }
+    }
 </style>
 
 <script>
@@ -54,7 +69,8 @@ import list from './list.vue';
                 hasSelect: false, //是否有选中状态
                 delete_items: [], //删除的数组
                 delete_All:false,
-                Allprice:0
+                Allprice:0,
+                showBlack:false
             }
         },
         components: {
@@ -72,15 +88,12 @@ import list from './list.vue';
             select_status: function(new_value, old_value) {
                 if (new_value) {//全选
                    this.items.forEach(e => {
-                       console.log(e)
-                        console.log('selecr_status发生变化')
-                        console.log('selecr_status发生变化'+e)
+
                         e.check = false;
                     })
                 } else {
                      this.items.forEach(e => {
-                        console.log(new_value)
-                        console.log('selecr_status无变化')
+
                         e.check = true; 
                     })
                     
@@ -104,45 +117,40 @@ import list from './list.vue';
                         })　
                         if (that.delete_items.length == 0) {
                             that.hasSelect = false;
+                            that.butdisplay= false; //9_13
+                            that.emptylist = true;//9_13
+                            that.showBlack = true
+                            that.delete_All = false
+                            that.$root.eventHup.$emit('childEvent', {//9_13
+                              shopping_checked: false
+                            })
                         } else {
                             that.hasSelect = true;
                         }　
-                        console.log(that.delete_items);
+
                         
                         if (that.delete_items.length == that.items.length) {
                             
                                     that.total = 0
                                     that.items.forEach(e => {
-
-//                                        console.log(that.total)
-//                                        console.log(that.items.length)
-//                                        console.log(e.price)
-                                        
-                                       
                                         that.total += Math.abs(e.count*e.price);
                                         
-                            })
+                                    })
                                 
                               
                             that.$root.eventHup.$emit('childEvent', {
                                 shopping_checked: true
                             })
                         } else {
-                            // this.select_status =false
-                            // if(that.delete_items.length==0){
-                            //     this.total = 0
-                            // }
+
                             this.delete_All=false
-                           
-                            
-                            console.log('1111111111111')
                             that.$root.eventHup.$emit('childEvent', {
                                 shopping_checked: false
                             })
                         }
                     }else{
                         console.log('yijingweitruele')
-                        this.delete_All=false
+                        that.delete_All=false
                         
                     }
                 },
@@ -155,29 +163,29 @@ import list from './list.vue';
         //     setTimeout(() => {
         //         that.initData()
         //    }, 450);
-            this.userGetinfo();//jia
+//            this.userGetinfo();//jia
             // if(location.href.indexOf('localhost')>-1){
-                // this.initData()
+                 this.initData()
             // }
         },
         methods: {
-            userGetinfo(){//jia
-                var _this = this;
-                setTimeout(function(){
-                    try{
-                        let objdata = iosObject.getUserInfo();
-                        let jsondata = eval('(' + objdata + ')');
-                        window.jsondata = jsondata;
-                        if(window.jsondata.token){
-                            _this.initData();
-                        }else{
-                            _this.userGetinfo();
-                        }
-                    }catch(e){
-                        _this.userGetinfo();
-                    }
-                },300)
-            },
+//            userGetinfo(){//jia
+//                var _this = this;
+//                setTimeout(function(){
+//                    try{
+//                        let objdata = iosObject.getUserInfo();
+//                        let jsondata = eval('(' + objdata + ')');
+//                        window.jsondata = jsondata;
+//                        if(window.jsondata.token){
+//                            _this.initData();
+//                        }else{
+//                            _this.userGetinfo();
+//                        }
+//                    }catch(e){
+//                        _this.userGetinfo();
+//                    }
+//                },300)
+//            },
             initData() {
                 var that = this;
                 let data ={
@@ -189,6 +197,7 @@ import list from './list.vue';
                         if(this.currentPage==1){
                              this.emptylist = true;  //空空如也
                              this.butdisplay= false; //结算
+                             this.showBlack = true
                         }else{
                             this.nulldata = true;
                         }
@@ -196,6 +205,7 @@ import list from './list.vue';
                     }else{
                         this.butdisplay= true;
                         this.emptylist = false;
+                        this.showBlack = false
                     for(let i in e.data.list){
                         e.data.list[i].check = true;
                

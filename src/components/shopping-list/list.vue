@@ -37,7 +37,10 @@ import util from "../../libs/util";
             select_status:function(new_value, old_value) {
               
                 if (this.select_status == true) {//全选
-                
+                  this.$parent.ids.push(this.it.id);
+                  this.$parent.counts.push(this.it.count)
+                  this.$parent.types.push(this.it.type)
+                  this.$parent.goodsIds.push(this.it.goodsId)
                 
                 } else {
                     
@@ -146,7 +149,7 @@ import util from "../../libs/util";
                     console.log( this.$parent.Allprice)
 
                 }else if(it.check){
-                    console.log(this.it)
+//                    console.log(this.it)
                     this.$parent.total = Math.abs(this.$parent.total+it.count*it.price);
                     this.$parent.ids.push(it.id);
                     this.$parent.counts.push(it.count)
