@@ -12,7 +12,7 @@
                 </div> 
                 <div class="h6 w"></div>
             </div>
-            <div class="submit-btn-1-fix" v-if="!select_status">
+            <div class="submit-btn-1-fix" v-if="select_status">
                 <div class="submit-btn-1-fixed"  @click='all_delete'>
                     全部删除
                 </div>
@@ -50,8 +50,8 @@
                     console.log('new_value'+new_value)
                     console.log('old_value'+old_value)
                     this.items.forEach(e => {
-                        console.log(this.items)
-                        console.log(e)
+//                        console.log(this.items)
+//                        console.log(e)
                         e.check = true;
                     })
                 } else {
