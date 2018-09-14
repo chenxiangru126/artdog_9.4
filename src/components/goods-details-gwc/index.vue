@@ -280,12 +280,13 @@
         opimg(e){
             _openimg(e);
          },
-        gostore(id){
-            let _t = this;
-            this.userGetinfo(function(){
-               iosObject.toFriendMainPage(id);
-            })
-        },
+         
+       gostore(id){
+           let _t = this;
+           this.userGetinfo(function(){
+              iosObject.toFriendMainPage(id);
+           })
+       },
         like(a){
             util.ajax.post("/mall/goodscomment_dianzan/dianzan.do",{goodscommentId:a.id}).then(e=>{
                 if(e.code==200){
