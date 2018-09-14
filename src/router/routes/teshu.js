@@ -30,5 +30,16 @@ const cuowu = [{
         default: resolve => require(['../../components/teshu/noData.vue'], resolve),
         headers: resolve => require(['../../components/common/header.vue'], resolve)
     }
-}]
+},{
+    path: '/help',
+    name: 'help',
+    meta: {
+        title: "用户帮助"
+    },
+    components: {
+        default: resolve => require(['../../components/teshu/help.vue'], resolve),
+        headers: resolve => require(['../../components/common/header.vue'], resolve)
+    }
+}
+]
 export default cuowu;
