@@ -280,6 +280,7 @@
         opimg(e){
             _openimg(e);
          },
+         
        gostore(id){
            let _t = this;
            this.userGetinfo(function(){
