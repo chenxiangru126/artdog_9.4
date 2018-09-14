@@ -87,8 +87,8 @@
                         </div>
                     </div>                     -->
                     <div  class="title-l">备注</div>
-                        <div class="text-area order_remark">
-                            <textarea name="" id="" cols="30" rows="5"  v-model.trim="remark" placeholder="需要开发票，公司抬头：某某某有限公司"></textarea>
+                        <div class="text-area order_remark" :key="index" @change="write" >
+                            <textarea   name="text_remake" id="" cols="30" rows="5"  placeholder="需要开发票，公司抬头：某某某有限公司"></textarea>
                         </div>
                 </div>
 
@@ -101,6 +101,7 @@
             </div>
         </div>
         <router-view class="child_view"></router-view>
+        <input type="hidden">
     </div>
 </template>
 <style lang="less">
@@ -115,7 +116,7 @@
                 addressMap: {},
                 typeList:null,
                 address_id: null, //地址ID
-                remark: '', //备注
+                textarea: [], //备注 //备注
                 money:null,
                 allType:null,
                 orderId:null,
@@ -203,7 +204,7 @@
 
                             ids: that.$route.query.id,
                             recive_address: that.address_id,
-                            remark: that.remark,
+                            remark: that.textarea,
                         };
                     if(that.$route.query.type==1){
                         this.util.ajax.post('/admin/sysUserReal/getId.do').then(e=>{
@@ -258,7 +259,7 @@
                         type: that.$route.query.type,
                         recive_address: that.address_id,
 
-                        remark: that.remark,
+                         remark: that.textarea,
                     }
                     if(that.$route.query.type==1){
                         this.util.ajax.post('/admin/sysUserReal/getId.do').then(e=>{
@@ -316,8 +317,17 @@
                 } else {
                     this.initData();
                 }
-            }
+            },
+            write(index){
+                 let textarea =[]
+                $("textarea[name='text_remake']").each(function(){
+                   textarea.push($(this).val());
+                 })   
+                
+                this.textarea = textarea
+            }   
         }
+
     }
 </script>
 

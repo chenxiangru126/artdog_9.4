@@ -163,29 +163,29 @@ import list from './list.vue';
         //     setTimeout(() => {
         //         that.initData()
         //    }, 450);
-//            this.userGetinfo();//jia
+            this.userGetinfo();//jia
             // if(location.href.indexOf('localhost')>-1){
-                 this.initData()
+//                 this.initData()
             // }
         },
         methods: {
-//            userGetinfo(){//jia
-//                var _this = this;
-//                setTimeout(function(){
-//                    try{
-//                        let objdata = iosObject.getUserInfo();
-//                        let jsondata = eval('(' + objdata + ')');
-//                        window.jsondata = jsondata;
-//                        if(window.jsondata.token){
-//                            _this.initData();
-//                        }else{
-//                            _this.userGetinfo();
-//                        }
-//                    }catch(e){
-//                        _this.userGetinfo();
-//                    }
-//                },300)
-//            },
+            userGetinfo(){//jia
+                var _this = this;
+                setTimeout(function(){
+                    try{
+                        let objdata = iosObject.getUserInfo();
+                        let jsondata = eval('(' + objdata + ')');
+                        window.jsondata = jsondata;
+                        if(window.jsondata.token){
+                            _this.initData();
+                        }else{
+                            _this.userGetinfo();
+                        }
+                    }catch(e){
+                        _this.userGetinfo();
+                    }
+                },300)
+            },
             initData() {
                 var that = this;
                 let data ={

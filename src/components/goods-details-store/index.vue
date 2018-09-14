@@ -15,8 +15,8 @@
             <p class="goods_info_name"><span>{{goodsInfo.goodsName}}</span>  <span class="but" @click="shelves">{{goodsInfo.isUp==0?'上架商品':'下架商品'}}</span></p>
             <p class="goods_info_price1"><span>商品编号</span><span class="font-14">{{goodsInfo.goods_num}}</span></p>
             <p class="goods_info_price2"><span>商品分类</span><span class="font-14">{{goodsInfo.bigTypeName}}</span></p>
-            <p class="goods_info_spe"><span>商品价格</span><span class="font-14" style="color: #D1324E;">￥{{goodsInfo.price}}</span></p>
-            <p class="goods_info_spe"><span>版权价格</span><span class="font-14" style="color: #D1324E;">￥{{goodsInfo.copyright_price}}</span></p>
+            <p class="goods_info_spe" v-if='goodsInfo.price'><span>商品价格</span><span class="font-14" style="color: #D1324E;">￥{{goodsInfo.price}}</span></p>
+            <p class="goods_info_spe" v-if='goodsInfo.copyright_price'><span>版权价格</span><span class="font-14"  style='color: rgb(245, 166, 35);'>￥{{goodsInfo.copyright_price}}</span></p>
             <p class="goods_info_spe"><span>商品标签</span><span class="font-14">{{tags}}</span></p>
             <p class="goods_info_spe"><span>商品状态</span><span class="font-14" style="color: #D1324E;">{{state}}  </span></p>
         </div>
@@ -98,7 +98,9 @@
         id:'',
         list:[],
         evaluation:[],
-        evaluationNum:""
+        evaluationNum:"",
+        copyPrice:null,
+        price:null
         }
     },
      components: {
@@ -116,6 +118,8 @@
             util.ajax.post("/mall/goods/getById.do",data).then(e=>{
                 this.goodsInfo = e.data.goods;
                 this.state = stateL[e.data.goods.state];
+                this.copyPrice = e.data.goods.copyright_price;
+                this.price = e.data.goods.price;
                 for(let i in e.data.goods.tags){
                     this.tags+=e.data.goods.tags[i]+'; '
                 }
