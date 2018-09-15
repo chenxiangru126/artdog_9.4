@@ -146,11 +146,11 @@ const config = {
       //     secure: false
       // },
         '/mall/*': {
-            target: 'http://test.bjyishubiyeji.com',
+            // target: 'http://test.bjyishubiyeji.com',
             // target:'http://admin22.tunnel.qydev.com',
             // target: 'http://yddwechat.bjyishubiyeji.com',
             // target: 'http://songzhan.tunnel.qydev.com',
-            // target:'http://192.168.3.40:8080',
+            target:'http://192.168.3.40:8080',
             changeOrigin: true,
             secure: false
         },

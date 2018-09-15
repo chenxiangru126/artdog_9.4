@@ -85,6 +85,7 @@
                 }
             },
             delete_address() {
+                
                 var that = this,
                     url = '/mall/address/delete.do';
                 this.util.ajax.post(url, {
@@ -99,6 +100,7 @@
                     }
                    
                 }).catch()
+                
             },
             select_event(a){
                 console.log("aaa"+a)

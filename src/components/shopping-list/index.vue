@@ -163,9 +163,9 @@ import list from './list.vue';
         //     setTimeout(() => {
         //         that.initData()
         //    }, 450);
-            this.userGetinfo();//jia
+            // this.userGetinfo();//jia
             // if(location.href.indexOf('localhost')>-1){
-//                 this.initData()
+                this.initData()
             // }
         },
         methods: {
