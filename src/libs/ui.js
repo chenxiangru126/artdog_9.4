@@ -40,8 +40,10 @@ function UI(___) {
 
         var _self = this;
         const ui_yes = document.querySelector(".ui_yes");
+        const back_yes = document.querySelector(".back_yes");
         const ui_cancel = document.querySelector(".ui_cancel");
         if (ui_yes) ui_yes.addEventListener('click', this.surn_fn.bind(this), false);
+        if (back_yes) back_yes.addEventListener('click', this.surn_fn.bind(this), false);
         if (ui_cancel) ui_cancel.addEventListener('click', this.cancel_fn.bind(this), false);
     }
 
@@ -66,7 +68,7 @@ function Log_alert(__) {
             <div class="p-b ${__.html?'p-t':'p-t-2'}">
             ${el_html}
             <div class="layer_cont_btn">
-                <div class="layer_cont_alert ui_yes">
+                <div class="layer_cont_alert ui_yes back_yes">
                 ${sureTxt}
                 </div>
             </div>

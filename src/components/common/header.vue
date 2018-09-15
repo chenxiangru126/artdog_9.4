@@ -39,6 +39,7 @@
         mapState
     } from 'vuex';
     import ios from "../../libs/ios";
+import order_list_sellerVue from '../order/order_list_seller.vue';
     export default {
         data() {
             return {
@@ -102,8 +103,10 @@
                     }
                   }
                 }).catch()
+              }else if(this.route_name == 'order_list_seller'){
+                this.$router.push('/switch')
               }else{
-                this.$router.go(-1)
+                  this.$router.go(-1)
               }
             },
             //返回到类型选择

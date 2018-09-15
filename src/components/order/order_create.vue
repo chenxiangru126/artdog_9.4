@@ -126,8 +126,12 @@
             }
         },
         created() {
+            
             this.initData();
         },
+        // activated(){
+        //     this.initData();
+        // },
         mounted() {
             var that = this;
 //            console.log(that.$route.query)
@@ -251,7 +255,7 @@
                             }).catch()
                         }
                     }
-                }else{
+                }else if(that.viewOrderType == 2){
                     url = '/mall/orders/createOrder.do';
                     _p = {
                         goodsId: that.$route.query.id,

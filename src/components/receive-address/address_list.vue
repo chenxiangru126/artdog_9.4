@@ -139,6 +139,9 @@
             select_address_send(a) {
                 this.$parent.recive_address_listen(a);
                 history.back();
+                // window.location.go(-1);
+                // this.$router.go(-1)
+                // window.location.href=document.referrer;
             }
         }
     }

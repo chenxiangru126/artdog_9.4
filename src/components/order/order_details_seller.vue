@@ -1,4 +1,13 @@
 <template>
+<div>
+    <div class="content_back">
+        <div class="iponeXh"></div>
+        <div class="header_if" >
+            <div class="_back back_yes" @click="back_center"></div>
+            <div class="_title">订单详情</div>
+        </div> 
+    </div>
+     
     <div class="order_details_b">
         <div class="order_details-nav">
             <div class="list-order-details-lib" v-if="state">
@@ -269,6 +278,8 @@
             </div>
         </div>
     </div>
+</div>
+    
 </template>
 
 <style lang="less">
@@ -289,10 +300,7 @@
     // 11.退货完成==退货-退款成功【卖家】
     // 12.退货完成==重新申请退货【卖家】
     // 13.退货完成==拒绝重新申请退款【卖家】
-    import {
-        _alert,
-        _confrim
-    } from '../../libs/ui';
+    import ui from '../../libs/ui';
     import { Toast } from 'mint-ui';
     import util from '../../libs/util';
     
@@ -320,6 +328,10 @@
             }
         },
         created() {
+            
+
+
+
             if (this.$route.query.show_send_goods) {
                 this.send_goods_show = true;
             }
@@ -485,7 +497,16 @@
 //                event.stopPropagation();
 //                debugger;
             },
-
+            //返回
+            back_center(){
+                // this.send_goods_show = false
+                this.$router.push('/order_list_seller');    
+                // this.close = function () {
+                //     var layer = document.getElementsByClassName(this.el_dom)[0];
+                //     document.getElementById("app").removeChild(layer);
+                // }
+                // this.close();
+            },
             //发货信息取消
             send_goods_cancel() {
                 this.send_goods_show = false;
@@ -543,6 +564,7 @@
                     }
                 }).catch()
             },
+            
             sure_get_goods() {
                 //接口不确定？？？
                 var that = this,
