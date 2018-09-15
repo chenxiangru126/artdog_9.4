@@ -329,7 +329,7 @@
                  })   
                 
                 this.textarea = textarea
-            }   
+            }
         }
 
     }
