@@ -1,4 +1,12 @@
 <template>
+    <div>
+        <div class="content_back">
+        <div class="iponeXh"></div>
+        <div class="header_if" >
+            <div class="_back back_yes" @click="back_center"></div>
+            <div class="_title">订单详情</div>
+        </div> 
+    </div>
     <div class="order_list_b">
         <div class="order_list-nav">
             <div class="list-nav-b flex-h flex-j-c" @click='nav_open'>
@@ -103,6 +111,7 @@
         <router-view class="order-search"></router-view>
     
     </div>
+    </div>
 </template>
 
 <style lang="less">
@@ -195,6 +204,10 @@
                 this.page++;
                 this.initData();
     
+            },
+            //头部返回
+            back_center(){
+                this.$router.push('/switch')
             },
             //暂不出售，
             no_sell(a){

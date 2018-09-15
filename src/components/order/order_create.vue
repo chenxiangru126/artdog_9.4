@@ -126,7 +126,6 @@
             }
         },
         created() {
-            
             this.initData();
         },
         // activated(){
@@ -197,13 +196,17 @@
                 iosObject.toFriendMainPage(this.friendsId);
             },
             submit_e() {
-
-//                debugger
-                let that = this;
+                
+                // setTimeout(e=>{
+                    this.initData() ;
+                // },5000)
+                
+                setTimeout(e=>{
+                        let that = this;
                 let url, _p;
                 if(that.viewOrderType == 1){
                     url = '/mall/orders/cartCreateOrder.do',
-
+                        alert(this.address_id )
                         _p = {
 
                             ids: that.$route.query.id,
@@ -239,6 +242,10 @@
                     }else{
                         if (!that.address_id ) {
                             that.Toast('请先选择收获地址');
+                            return false;
+                        }else if(that.addressMap == {}){
+                            that.Toast('失败1');
+
                             return false;
                         }else{
                             this.util.ajax.post(url, _p).then(e => {
@@ -296,6 +303,11 @@
                             that.Toast('请先选择收获地址');
 
                             return false;
+
+                        }else if(that.addressMap == {}){
+                            that.Toast('失败2');
+
+                            return false;
                         }else{
                             this.util.ajax.post(url, _p).then(e => {
 
@@ -312,6 +324,9 @@
                         }
                     }
                 }
+                },3000)
+//                debugger
+                
             },
             
             recive_address_listen(a) {

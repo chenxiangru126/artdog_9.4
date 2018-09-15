@@ -32,7 +32,7 @@ import receive_address from './recevie_address';
         },
         components: {
             default: resolve => require(['../../components/order/order_list_seller.vue'], resolve),
-            headers: resolve => require(['../../components/common/header.vue'], resolve)
+            // headers: resolve => require(['../../components/common/header.vue'], resolve)
         },
         children:[
             {
