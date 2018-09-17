@@ -103,7 +103,7 @@ import order_list_sellerVue from '../order/order_list_seller.vue';
                     }
                   }
                 }).catch()
-              }else if(this.route_name == 'order_list_seller'){
+              }else if( this.route_name=='wallet'){
                 this.$router.push('/switch')
               }else{
                   this.$router.go(-1)
