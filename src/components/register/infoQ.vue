@@ -93,21 +93,30 @@ export default {
         }
     },
     created() {
-        let model   = this.$route.query.model
-        if(model=='C' || model=='D' ||model=='E'){
-            setTimeout(()=>{//判断是否缴纳保证金，未缴纳跳转到选择类型页面
-            this.util.ajax.post("/mall/shopauthentication/getPayStatus.do").then(e=>{
-                if(e.data.isPay != 2){
-                this.Toast("支付未完成")
-                this.$router.push({path: '/register1?shoptype=2'});
-                }else{
-                    this.showCover=false
-                }
-            })
-        },400)
-        }else{
-            this.showCover=false
-        }
+
+         this.util.ajax.post('/mall/shopauthentication/getShopType.do').then(e=>{
+//                 debugger;
+                 if(e.code ==200){
+                     this.model= e.data.model
+                     this.shoptype = e.data.shoptype
+                     if(this.model=='C' || this.model=='D' ||this.model=='E'){
+                        setTimeout(()=>{//判断是否缴纳保证金，未缴纳跳转到选择类型页面
+                            this.util.ajax.post("/mall/shopauthentication/getPayStatus.do").then(e=>{
+                                if(e.data.isPay != 2){
+                                    this.Toast("支付未完成")
+                                    this.$router.push({path: '/register1?shoptype=2'});
+                                }else{
+                                    this.showCover=false
+                                }
+                            })
+                        },400)
+                    }else{
+                        this.showCover=false
+                    }
+                 }
+             })
+        
+        
         
         // setTimeout(()=>{
             
@@ -115,6 +124,7 @@ export default {
 
     },
    mounted(){
+    
          let model   = this.$route.query.model
          let shoptype = this.$route.query.shoptype
         //  let shop_type_id = this.$route.query.shop_type_id
