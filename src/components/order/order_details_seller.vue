@@ -126,7 +126,7 @@
                         <p class="flex-1 flex-h"> 退单原因： <span class="c4 ">{{returnInfo.return_reason}}</span></p>
                         <div class="flex-1 flex-h show-imgs">
                             <p class="w4"></p>
-                            <img :src="i" @click='open_img(i)' alt="" v-for="i in returnInfo.urls" :key='i'>
+                            <img style="object-fit: cover " :src="i" @click='open_img(i)' alt="" v-for="i in returnInfo.urls" :key='i'>
                         </div>
                     </div>
                 </div>

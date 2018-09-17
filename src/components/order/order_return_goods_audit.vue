@@ -37,9 +37,11 @@
                     margin-left: 0.5rem;
                 }
                 img {
-                    width: 100%;
+                    width: 5.333333rem;
                     display: block;
                     float: left;
+                    height: 5.333333rem;
+                    object-fit: cover;
                 }
             }
         }
