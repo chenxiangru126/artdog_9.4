@@ -3,7 +3,7 @@
         <div class="tx_list-nav">
             <div class="list-nav-b flex-h flex-j-c" @click='nav_open'>
 
-                <p v-if="billType=='4'||billType=='7'||billType=='47'">保证金明细</p>
+                <p v-if="billType=='4'||billType=='7'||billType=='4'+'7' ">保证金明细</p>
                 <p v-else-if="billType=='6'">提现明细</p>
                 <p class="t-c flex-v flex-j-c l_t">
                     <span class="span_up" v-if='nav_show'></span>
@@ -64,7 +64,8 @@
     export default {
         data() {
             return {
-                billType:'4'+'7'+'47', // 47保证金明细 6提现明细
+                billType:'4'+'7', // 47保证金明细 6提现明细
+                // showType:'',
                 nav_show: false,
                 items: [],
                 loading: false,

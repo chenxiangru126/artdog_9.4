@@ -206,7 +206,7 @@
                 let url, _p;
                 if(that.viewOrderType == 1){
                     url = '/mall/orders/cartCreateOrder.do',
-                        alert(this.address_id )
+//                        alert(this.address_id )
                         _p = {
 
                             ids: that.$route.query.id,
@@ -324,7 +324,7 @@
                         }
                     }
                 }
-                },3000)
+                },1000)
 //                debugger
                 
             },

@@ -3659,9 +3659,31 @@ export default {
         {id: 33, name: '澳门', city: [
             {id: 344, name: '澳门', district: []}
         ]},
-        {id: 34, name: '台湾', city: [
-            {id: 345, name: '台湾', district: []}
-        ]}
+          {id: 34, name: '台湾', city: [
+              {id: 345, name: '台湾', district: [
+                  {id: 2863, name: '金门县'},
+                  {id: 2864, name: '连江县'},
+                  {id: 2865, name: '苗栗县'},
+                  {id: 2866, name: '南投县'},
+                  {id: 2867, name: '澎湖县'},
+                  {id: 2868, name: '屏东县'},
+                  {id: 2869, name: '台东县'},
+                  {id: 2870, name: '台中市'},
+                  {id: 2871, name: '台南市'},
+                  {id: 2872, name: '台北市'},
+                  {id: 2873, name: '桃园市'},
+                  {id: 2874, name: '云林县'},
+                  {id: 2875, name: '新北市'},
+                  {id: 2876, name: '新竹市'},
+                  {id: 2877, name: '彰化县'},
+                  {id: 2878, name: '嘉义县'},
+                  {id: 2879, name: '新竹县'},
+                  {id: 2880, name: '花莲县'},
+                  {id: 2881, name: '宜兰县'},
+                  {id: 2882, name: '高雄'},
+                  {id: 2883, name: '基隆市'},
+              ]}
+          ]}
     ]
     }
   },
