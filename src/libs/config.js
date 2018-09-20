@@ -3,9 +3,9 @@ import {isAndroidOrIos} from './tools';
 const get_usr_info=resolve=>{
     if(isAndroidOrIos()==-1||/localhost/.test(location.href)){
         common_param = {
-            token: "",
+            token: "29b7c656-f264-4f1a-ba2a-58af2e77efad",
             userId:"",
-            mobile:""
+            mobile:"15865126812"
         };
     }else{
         try {

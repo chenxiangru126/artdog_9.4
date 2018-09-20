@@ -341,7 +341,9 @@
                         id: a.id,
                         goodsId: a.goodsId
                     }
+                    
                 })
+                console.log(a.id,a.goodsId)
             },
             // 去审核
             go_audit(a) {

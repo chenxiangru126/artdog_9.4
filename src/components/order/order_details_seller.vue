@@ -347,6 +347,7 @@
                     _p = {
                         id: that.$route.query.id,
                     };
+                    console.log('接口上传的参数'+_p)
                 this.util.ajax.post(url, _p).then(e => {
                     that.details = e.data || {};
                     that.buyer = e.data.buyer || {};

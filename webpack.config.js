@@ -146,9 +146,9 @@ const config = {
       //     secure: false
       // },
         '/mall/*': {
-            // target: 'http://test.bjyishubiyeji.com',
+            target: 'http://test.bjyishubiyeji.com',
             // target:'http://admin22.tunnel.qydev.com',
-            target: 'http://yddwechat.bjyishubiyeji.com',
+            // target: 'http://yddwechat.bjyishubiyeji.com',
             // target: 'http://songzhan.tunnel.qydev.com',
             // target:'http://192.168.3.40:8080',
             changeOrigin: true,
@@ -157,8 +157,8 @@ const config = {
       '/admin/*': {
         // target: 'http://xiaoceshi.tunnel.qydev.com',
         // target: 'http://59.110.169.175:8080',
-        // target: 'http://test.bjyishubiyeji.com:8080',
-        target: 'https://yddwechat.bjyishubiyeji.com:8443',
+        target: 'http://test.bjyishubiyeji.com:8080',
+        // target: 'https://yddwechat.bjyishubiyeji.com:8443',
         //   target: 'http://songzhan.tunnel.qydev.com',
         changeOrigin: true,
         secure: false
