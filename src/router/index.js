@@ -12,7 +12,7 @@ const RouterConfig={
  const router=new VueRouter(RouterConfig);
 router.beforeEach((to,from,next)=>{
     //loading=start
-    console.log(1);
+    // console.log(1);
     Indicator.open({ spinnerType: 'fading-circle'});
     title(to.meta.title)
     next();

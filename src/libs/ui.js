@@ -75,7 +75,7 @@ function Log_alert(__) {
         </div>
         </div>
             `;
-        console.log(parseDom(alert_dom))
+        // console.log(parseDom(alert_dom))
         app.appendChild(parseDom(alert_dom));
     }
     this.__init__();

@@ -102,7 +102,7 @@
                         for(let i in e.data.list){
                             this.billType = e.data.list[i].billType
                         }
-                        console.log(this.billType)
+                        // console.log(this.billType)
                     } else {
                         that.items = that.items.concat(e.data.list);
                     }

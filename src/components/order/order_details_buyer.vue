@@ -303,7 +303,7 @@
 //                    console.log(e);
                 });
             } catch (e) {
-                alert(e);
+                // alert(e);
             }
         },
         methods: {

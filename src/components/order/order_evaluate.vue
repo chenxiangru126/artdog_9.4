@@ -209,7 +209,7 @@
                 } else if (this.star_click_num == a) {
                     this.score_num = a - 1;
                     if (this.current_star_status == 1) {
-                        console.log('666666')
+                        // console.log('666666')
                         this.score_num = this.score_num + 0.5;
                         return 'half-stars'
                     } else if (this.current_star_status == 2) {

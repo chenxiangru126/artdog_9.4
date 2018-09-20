@@ -162,7 +162,7 @@
                     shop_type_id
                     }
                     this.util.ajax.post('/mall/shop/editShop.do',_p).then(e=>{
-                        console.log(e.code)
+                        // console.log(e.code)
 
                     })       
                  },
@@ -182,7 +182,7 @@
 
                 }
                   this.util.ajax.post('/mall/shop/editShop.do',_p).then(e=>{
-                     console.log(e.code)
+                    //  console.log(e.code)
 
                   })
                   

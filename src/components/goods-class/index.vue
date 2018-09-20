@@ -327,7 +327,7 @@ import axios from 'axios';
                     this.navigation2 = '分类';
                 }
                 if(this.goodsTypeId.length>1){
-                    console.log(1);
+                    // console.log(1);
                     this.isDian = true;
                 }else{
                     this.isDian = false;

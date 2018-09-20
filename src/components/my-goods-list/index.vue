@@ -122,7 +122,7 @@ import no_data from '../teshu/noData.vue';
                         this.busy=true;
                         return false;
                     }
-                    console.log(e.data)
+                    // console.log(e.data)
                     that.list =  that.list.concat(e.data.list||[]);
                      this.busy=false;
                      this.nones = false;

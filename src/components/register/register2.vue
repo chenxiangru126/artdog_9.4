@@ -91,7 +91,7 @@
                 this.shoptype = shoptype
                 let shop_type_id = this.$route.query.shop_type_id;
                 this.shop_type_id = shop_type_id
-                console.log('this.shop_type_id::'+this.shop_type_id);
+                // console.log('this.shop_type_id::'+this.shop_type_id);
                 // 个人店铺
                    if(shoptype == 1){
                        if(model =='A'){

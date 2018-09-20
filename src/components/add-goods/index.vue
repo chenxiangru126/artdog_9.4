@@ -220,7 +220,7 @@ import {_alert,_confrim,_openimg} from '../../libs/ui';
                         if(e.code==200){
                             this.Toast('验证通过');
                             this.i++
-                            console.log(this.i)
+                            // console.log(this.i)
                         }
 //                        else{
 //                            this.Toast('版权编号输入错误，请重新验证');
@@ -277,7 +277,7 @@ import {_alert,_confrim,_openimg} from '../../libs/ui';
                 ctx.clearRect(0, 0, cvs.width, cvs.height);
                 ctx.drawImage(img, 0, 0, img.width, img.height);
                 var dataUrl = cvs.toDataURL('image/jpeg', 1);
-                alert(dataUrl);
+                // alert(dataUrl);
                 // 上传略
                 // that.upload( dataUrl );
             };

@@ -47,8 +47,8 @@
         watch: {
             select_status: function(new_value, old_value) {
                 if (new_value) {//全选
-                    console.log('new_value'+new_value)
-                    console.log('old_value'+old_value)
+                    // console.log('new_value'+new_value)
+                    // console.log('old_value'+old_value)
                     this.items.forEach(e => {
 //                        console.log(this.items)
 //                        console.log(e)

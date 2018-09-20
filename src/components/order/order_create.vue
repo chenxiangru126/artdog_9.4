@@ -18,7 +18,7 @@
                                     <p class="c4 flex-3">{{addressMap.address}}</p>
                                 </div>
                                 <div class="flex-1 flex-h">
-                                     <p class="flex-1">姓名：</p>
+                                    <p class="flex-1">姓名：</p>
                                     <p class="c4 flex-3">{{addressMap.name}}</p>
                                 </div>
                                 <div class="flex-1 flex-h">
@@ -91,10 +91,11 @@
                             <textarea   name="text_remake" id="" cols="30" rows="5"  placeholder="需要开发票，公司抬头：某某某有限公司"></textarea>
                         </div>
                 </div>
-
+                    <div class='zongji'>
                     <div class="apply_btn flex-h">
                         <div class="flex-3 c1 font-1 t-c">总计 ¥{{details.allMoney.toFixed(2)}}</div>
                         <div class="flex-1" @click="submit_e">提交订单</div>
+                    </div>
                     </div>
                     <div class="h5"></div>
                 </div>
@@ -106,6 +107,14 @@
 </template>
 <style lang="less">
     @import 'order_details.less';
+    .zongji{
+        width:100%;
+        height:4.5rem;
+        position: fixed;
+        z-index: 9999999999;
+        bottom: 0;
+        background: #1a1a1a
+    }
 </style>
 
 <script>

@@ -103,7 +103,7 @@
                 
             },
             select_event(a){
-                console.log("aaa"+a)
+                // console.log("aaa"+a)
                 let select_status=this.$parent.select_status;
                 if(!select_status){
                      a.check=!a.check;

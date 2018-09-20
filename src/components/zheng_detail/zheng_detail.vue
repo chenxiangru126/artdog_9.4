@@ -56,13 +56,13 @@ export default {
         }
         this.util.ajax.post('/admin/authCopyright/getCopyrightDataDetails.do',_p).then(e=>{
           //获取url
-            console.log(e);
+            // console.log(e);
           if(e.code == 200){
-              console.log(e.data);
+            //   console.log(e.data);
                this.url1 = e.data.c_url1
               this.url2 = e.data.c_url2
               this.b_url = e.data.b_url
-              console.log(this.url1);
+            //   console.log(this.url1);
           };
 
         })

@@ -10,7 +10,7 @@
             <div class="w h3 line-h-3 flex-h b-b  m-t">
                 <div class="flex-1  font-1 p-l">网店名称</div>
                 <div class="flex-3">
-                    <input type="text" placeholder="输入网店昵称" v-model="name_nike">
+                    <input type="text" placeholder="输入网店昵称" v-model="name_nike" >
                 
                 </div>
             </div>

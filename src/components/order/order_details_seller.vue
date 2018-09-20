@@ -218,7 +218,7 @@
                             <p class="flex-1 flex-h"> 支付方式： <span class="c4 ">{{orderDetail.payWay}}</span></p>
                             <p class="flex-1 flex-h"> 支付时间： <span class="c4 ">{{orderDetail.payTime}}</span></p>
                             <p class="flex-1 flex-h"> 订单金额： <span class="c4 ">¥{{orderDetail.money}}</span></p>
-                            <p class="flex-1 flex-h" v-show=" orderDetail.orderType == 0 ? true:false"> 平台费用： <span class="c4 ">1.00（已计于订单金额中）</span></p>
+                            <p class="flex-1 flex-h" v-show=" orderDetail.orderType == 0 ? true:false"> 平台费用： <span class="c4 ">{{orderDetail.flatMoney}}（已计于订单金额中）</span></p>
                             <div class="flex-1 flex-v c13" style="padding-left:4.5rem" v-show=" orderDetail.orderType == 0 ? true:false">
                                 <p>收费规则：</p>
                                 <p>好评5星，收取0% 好评4星，收取1%</p>
@@ -243,7 +243,7 @@
                     <div class="order-details-lib_b order-p-t-1" style="min-height:9rem">
                         <p class="flex-1 flex-h"> {{discussDetail.content}}</p>
                         <!-- <p class="flex-1 flex-h"> {{discussDetail.discussTime}}</p> -->
-                        <div class='' v-for="(url,index) in discussDetail.flist" :key="index">
+                        <div style='float: left;margin: 20px 10px 10px 0;' v-for="(url,index) in discussDetail.flist" :key="index">
                            <img style='width="50px";height:50px;object-fit:cover' :src="url" alt=""> 
                         </div>
                     </div>
@@ -437,7 +437,7 @@
                var that = this;
                 that.userId = that.details.buyer.buyerId
                this.id = that.details.orderId
-                console.log(that.details);
+                // console.log(that.details);
                 event.stopPropagation();
                 // alert('000000000')
                 this.util.ajax.get('/admin/users/zyzhuce.do?userId='+that.userId).then((e)=>{
@@ -456,7 +456,7 @@
 
                       let block_cert_numbere  = e.data.goodsDetail.copyright_num
                                 // let  block_cert_numbere = '22A60CC41878924AA027555230B3716D'
-                                console.log('old_user_id'+old_user_id,'new_user_id'+new_user_id,'block_cert_numbere'+block_cert_numbere)
+                                // console.log('old_user_id'+old_user_id,'new_user_id'+new_user_id,'block_cert_numbere'+block_cert_numbere)
 
                                 let _p ={
                                     old_user_id,

@@ -28,7 +28,7 @@
         mounted() {
             var that = this;
             that.orderId=that.$route.query.orderId;
-            console.log('orderId'+that.orderId)
+            // console.log('orderId'+that.orderId)
         },
         methods: {
             initData() {

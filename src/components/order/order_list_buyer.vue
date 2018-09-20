@@ -291,7 +291,7 @@
             // 确定收货
             sure_get_goods(a) {
                 var that = this;
-                console.log('22222222222222222222'+a.id)
+                // console.log('22222222222222222222'+a.id)
                 _confrim({
                     content: '请确定收到货后，确认收货。', //必填
                     yes() { //选填

@@ -121,7 +121,7 @@ import order_list_sellerVue from '../order/order_list_seller.vue';
                 }
             },
             process_child_event(content) {
-                console.log('header'+content)
+                // console.log('header'+content)
                 // 处理地址列表，全选状态，接收参数
                 if (this.route_name == 'address_list') {
                     this.address_checked = content.address_checked

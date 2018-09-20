@@ -73,7 +73,7 @@ export default {
    mounted(){
     // 发送异步请求获取个人店铺的完善资料
       this.util.ajax.post('/mall/shop/getShopDetail.do').then(e=>{
-          console.log(e.data)
+        //   console.log(e.data)
           this.name = e.data.name
           this.realName = e.data.realName
           this.idCard = e.data.idCard

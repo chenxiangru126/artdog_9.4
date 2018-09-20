@@ -163,7 +163,7 @@ export default {
             },
             return_address(a) {
                 this.area_address = a;
-                console.log(this.area_address);
+                // console.log(this.area_address);
                 this.cancel_address();
             },
             get_colose(data){
@@ -181,7 +181,7 @@ export default {
               let shoptype = this.shoptype
               let shop_type_id = this.shop_type_id
 
-              console.log('idid::::'+this.shop_type_id)
+            //   console.log('idid::::'+this.shop_type_id)
               
             //   电话号码验证
                var rePhone = /^1[0-9]{10}/;

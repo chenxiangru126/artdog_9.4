@@ -99,7 +99,7 @@ import list from './list.vue';
                         } else {
                             that.hasSelect = true;
                         }　
-                        console.log(that.delete_items);　
+                        // console.log(that.delete_items);　
                         if (that.delete_items.length == that.list.length) {
                             that.$root.eventHup.$emit('childEvent', {
                                 shopping_checked: true
@@ -140,7 +140,7 @@ import list from './list.vue';
                     currentPage:this.currentPage,
                 }
                 util.ajax.post("/mall/cart/getCartData.do",data).then(e=>{
-                    console.log(e);
+                    // console.log(e);
                     if(e.data.list&&e.data.list.length==0){
                         if(this.currentPage==1){
                              this.emptylist = true;

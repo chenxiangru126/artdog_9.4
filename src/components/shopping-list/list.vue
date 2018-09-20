@@ -143,10 +143,10 @@ import util from "../../libs/util";
                     this.$parent.total =Math.abs( this.$parent.total-it.count*it.price);
                     var index = this.$parent.ids.indexOf(it.id);
                     this.$parent.ids.splice(index, 1);
-                    console.log(this.it)
+                    // console.log(this.it)
                     this.$parent.Allprice = it.count*it.price //获取点击取消的商品金额
 
-                    console.log( this.$parent.Allprice)
+                    // console.log( this.$parent.Allprice)
 
                 }else if(it.check){
 //                    console.log(this.it)

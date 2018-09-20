@@ -13,7 +13,7 @@ let cleanOptions = {
   verbose: true, //将log写到 console.
   dry: true, //true不要删除任何东西，主要用于测试.
 };
-console.log('__dirname', __dirname);
+// console.log('__dirname', __dirname);
 if (process.env.NODE_ENV == 'production') {
   cleanOptions.dry = false;
   cleanOptions.exclude[0] = '';
@@ -146,11 +146,11 @@ const config = {
       //     secure: false
       // },
         '/mall/*': {
-            target: 'http://test.bjyishubiyeji.com',
+            // target: 'http://test.bjyishubiyeji.com',
             // target:'http://admin22.tunnel.qydev.com',
             // target: 'http://yddwechat.bjyishubiyeji.com',
             // target: 'http://songzhan.tunnel.qydev.com',
-            // target:'http://192.168.3.40:8080',
+            target:'http://192.168.3.40:8080',
             changeOrigin: true,
             secure: false
         },

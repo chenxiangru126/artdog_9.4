@@ -107,7 +107,7 @@ import list from './list.vue';
                     
                     if (that.select_status) {//全选择
                     
-                        console.log("that.select_status:items里"+that.select_status)
+                        // console.log("that.select_status:items里"+that.select_status)
                         that.items.forEach(e => {
                             if (!e.check) {
                                 that.delete_items.push(e.id)
@@ -149,7 +149,7 @@ import list from './list.vue';
                             })
                         }
                     }else{
-                        console.log('yijingweitruele')
+                        // console.log('yijingweitruele')
                         that.delete_All=false
                         
                     }
@@ -235,7 +235,7 @@ import list from './list.vue';
             },
             process_data(a) {
                 var that = this;
-                console.log('传入的process_data', a);
+                // console.log('传入的process_data', a);
                 that.select_status = null;
                 if(a){
                     that.select_status = true
@@ -248,7 +248,7 @@ import list from './list.vue';
                     })　
                    
                 }else{
-                    console.log( 'that.select_status为false')
+                    // console.log( 'that.select_status为false')
                 }
                
     
@@ -277,7 +277,7 @@ import list from './list.vue';
             //     this.initData();
             // },
             settlement(){
-                console.log(this.count)
+                // console.log(this.count)
                 if(this.ids.length==0){
                     this.Toast('请选择商品');
                     return false

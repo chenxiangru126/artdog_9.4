@@ -82,9 +82,9 @@
       },
       select(item,index){
         this.showData=false;
-        console.log("选择");
-        console.log(item);
-        console.log(index);
+        // console.log("选择");
+        // console.log(item);
+        // console.log(index);
         //this.selectedValue=item;
         //赋值的时候要分开写
         this.selectedValue.key=item.key;
