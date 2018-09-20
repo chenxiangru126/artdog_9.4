@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{117:function(n,p,i){n.exports=i.p+"images/tixing.png"}}]);
